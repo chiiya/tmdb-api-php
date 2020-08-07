@@ -34,12 +34,6 @@
 >> Installation ..................................................................... </a>
 <a href="#contributing"
 >> Contributing ..................................................................... </a>
-<a href="#pre-commit"
->> Pre-Commit ....................................................................... </a>
-<a href="#tests"
->> Tests ............................................................................ </a>
-<a href="#quality-assurance"
->> Quality Assurance ................................................................ </a>
 <a href="#documentation"
 >> Documentation .................................................................... </a>
 </pre>
@@ -58,6 +52,7 @@ Contributions are welcome. To set up the project, run `just setup`.
   <summary><strong>About <code>just</code></strong></summary>
 
 <hr>
+
 [Just](https://github.com/casey/just) is a command runner similar to <code>make</code> with some advantages 
 and better cross-platform support. It should be installed both in Homestead and on your local system.
 You can list all available commands in a project using <code>just --list</code>.
@@ -83,7 +78,7 @@ brew install just
 ```
 </details>
 
-### Linting
+#### Linting
 
 To lint (and fix) your PHP code, run the following command:
 
@@ -94,7 +89,7 @@ just lint
 Make sure your code passes before pushing, since otherwise the build will fail
 and your pull request won't be merged.
 
-### Pre-Commit
+#### Pre-Commit
 
 Since linting the files manually before each commit is cumbersome, a
 `pre-commit` configuration is available to run PHP CS Fixer before each commit.
@@ -114,14 +109,14 @@ git add -u && !!
 
 </details>
 
-### Tests
+#### Tests
 
 Run the tests with `just test`. This will run both unit and integration tests
 for all modules. A code coverage report can be generated with
 `just coverage`. This will take **significantly** longer than just running
 the tests normally.
 
-## Quality Assurance
+#### Quality Assurance
 
 A list of QA criteria has been defined for this project. When contributing, try
 to keep these goals in mind.
@@ -140,5 +135,5 @@ to keep these goals in mind.
 
 ## Documentation
 
-The technical documentation for this project can be found
+The documentation for this package can be found
 [here](documentation/README.md).
