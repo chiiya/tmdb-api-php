@@ -26,6 +26,6 @@ jobs:
             - ./vendor
 
       # Run tests
-      - run: phpdbg -qrr ./vendor/bin/phpunit --coverage-clover coverage.xml
+      - run: phpdbg -qrr -d memory_limit=512M ./vendor/bin/phpunit --coverage-clover coverage.xml
       - codecov/upload:
           file: coverage.xml
