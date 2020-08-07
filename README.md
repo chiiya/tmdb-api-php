@@ -1,7 +1,7 @@
 <br />
 <div align="center">
   <p align="center">
-    <a href="https://app.circleci.com/pipelines/github/chiiya/tmdb-api-php" target="_blank"><img src="https://circleci.com/gh/chiiya/tmdb-api-php.svg?style=svg"></a>
+    <a href="https://app.circleci.com/pipelines/github/chiiya/tmdb-api-php" target="_blank"><img src="https://circleci.com/gh/chiiya/tmdb-api-php.svg?style=shield"></a>
     <a href="https://codecov.io/gh/chiiya/tmdb-api-php">
       <img src="https://codecov.io/gh/chiiya/tmdb-api-php/branch/master/graph/badge.svg" />
     </a>
