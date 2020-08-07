@@ -1,0 +1,47 @@
+{
+  "name": "chiiya/tmdb-api-php",
+  "description": "PHP wrapper for the TMDB API",
+  "keywords": ["TMDB", "API", "movies", "tv"],
+  "homepage": "https://github.com/chiiya/tmdb-api-php",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Elisha Witte",
+      "email": "elishawitte@gmail.com",
+      "homepage": "https://github.com/chiiya",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^7.2",
+    "ext-json": "*",
+    "dusank/knapsack": "^10.0",
+    "friendsofphp/php-cs-fixer": "^2.16",
+    "guzzlehttp/guzzle": "^7.0",
+    "nesbot/carbon": "^1 || ^2",
+    "symfony/options-resolver": "^5.1"
+  },
+  "require-dev": {
+    "blastcloud/guzzler": "^2.0",
+    "mockery/mockery": "^1.3",
+    "phpunit/phpunit": "^8.0",
+    "symfony/var-dumper": "^4.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "Chiiya\\Tmdb\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Chiiya\\Tmdb\\Tests\\": "tests/"
+    }
+  },
+  "config": {
+    "preferred-install": "dist",
+    "sort-packages": true,
+    "optimize-autoloader": true
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
