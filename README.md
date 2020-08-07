@@ -1,4 +1,3 @@
-<br />
 <div align="center">
   <strong>
     <h2 align="center">TMDB API (PHP)</h2>
