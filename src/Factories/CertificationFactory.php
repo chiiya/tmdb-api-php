@@ -9,7 +9,7 @@ use Chiiya\Tmdb\Models\CertificationList;
 class CertificationFactory extends AbstractFactory
 {
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function create(array $data = [])
     {
@@ -17,7 +17,7 @@ class CertificationFactory extends AbstractFactory
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function createCollection(array $data = [])
     {

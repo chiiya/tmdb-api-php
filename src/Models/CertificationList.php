@@ -16,21 +16,15 @@ class CertificationList extends Entity
         $this->certifications = new Collection([]);
     }
 
-    /**
-     * @return string
-     */
     public function getCountry(): string
     {
         return $this->country;
     }
 
-    /**
-     * @param string $country
-     * @return CertificationList
-     */
     public function setCountry(string $country): CertificationList
     {
         $this->country = $country;
+
         return $this;
     }
 
@@ -44,16 +38,16 @@ class CertificationList extends Entity
 
     /**
      * @param Certification[]|Collection $certifications
-     * @return CertificationList
      */
     public function setCertifications($certifications): CertificationList
     {
         $this->certifications = $certifications;
+
         return $this;
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function toArray(): array
     {

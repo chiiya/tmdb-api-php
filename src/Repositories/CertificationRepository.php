@@ -12,9 +12,8 @@ class CertificationRepository extends AbstractRepository
 {
     /**
      * Get an up to date list of the officially supported movie certifications on TMDb.
+     *
      * @see https://developers.themoviedb.org/3/certifications/get-movie-certifications
-     * @param array $parameters
-     * @return Collection
      */
     public function getMovieCertifications(array $parameters = []): Collection
     {
@@ -23,9 +22,8 @@ class CertificationRepository extends AbstractRepository
 
     /**
      * Get an up to date list of the officially supported TV show certifications on TMDb.
+     *
      * @see https://developers.themoviedb.org/3/certifications/get-tv-certifications
-     * @param array $parameters
-     * @return Collection
      */
     public function getTvCertifications(array $parameters = []): Collection
     {
@@ -34,8 +32,6 @@ class CertificationRepository extends AbstractRepository
 
     /**
      * Return the model factory.
-     *
-     * @return FactoryInterface
      */
     protected function getFactory(): FactoryInterface
     {
@@ -44,8 +40,6 @@ class CertificationRepository extends AbstractRepository
 
     /**
      * Return the model api client.
-     *
-     * @return Certifications
      */
     protected function getResource(): Certifications
     {

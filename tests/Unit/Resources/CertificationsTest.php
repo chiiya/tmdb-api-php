@@ -10,7 +10,8 @@ use PHPUnit\Framework\TestCase;
 
 class CertificationsTest extends TestCase
 {
-    use UsesGuzzler, MocksApiRequests;
+    use UsesGuzzler;
+    use MocksApiRequests;
 
     protected $client;
 

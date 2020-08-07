@@ -11,7 +11,8 @@ use PHPUnit\Framework\TestCase;
 
 class CertificationRepositoryTest extends TestCase
 {
-    use UsesGuzzler, MocksApiRequests;
+    use UsesGuzzler;
+    use MocksApiRequests;
 
     protected $repository;
 

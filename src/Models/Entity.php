@@ -9,7 +9,7 @@ abstract class Entity implements \JsonSerializable, Arrayable
     use SerializesToJson;
 
     /**
-     * List of properties to populate by the ObjectHydrator
+     * List of properties to populate by the ObjectHydrator.
      *
      * @var array
      */
@@ -17,8 +17,6 @@ abstract class Entity implements \JsonSerializable, Arrayable
 
     /**
      * Convert the model instance to an array.
-     *
-     * @return array
      */
     abstract public function toArray(): array;
 }

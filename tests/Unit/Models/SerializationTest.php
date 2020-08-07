@@ -16,5 +16,4 @@ class SerializationTest extends TestCase
         ];
         $this->assertEquals(json_encode($attributes), $model->__toString());
     }
-
 }

@@ -17,8 +17,6 @@ class Client
 
     /**
      * Client constructor.
-     * @param string $token
-     * @param array $options
      */
     public function __construct(string $token, array $options = [])
     {
@@ -28,8 +26,6 @@ class Client
 
     /**
      * Resolve user options.
-     *
-     * @param array $options
      */
     protected function resolveOptions(array $options): void
     {
@@ -51,9 +47,6 @@ class Client
         $this->options = $resolver->resolve($options);
     }
 
-    /**
-     * @return Gateway
-     */
     public function getGateway(): Gateway
     {
         return $this->gateway;

@@ -8,8 +8,6 @@ class Collection extends BaseCollection implements Arrayable
 {
     /**
      * Set input of collection.
-     *
-     * @param array $input
      */
     public function setInput(array $input): void
     {
@@ -18,8 +16,6 @@ class Collection extends BaseCollection implements Arrayable
 
     /**
      * Convert collection to array.
-     *
-     * @return array
      */
     public function toArray(): array
     {

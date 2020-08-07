@@ -8,67 +8,49 @@ class Certification extends Entity
     private $certification;
     /** @var string */
     private $meaning;
-    /** @var integer */
+    /** @var int */
     private $order;
 
     public static $properties = ['certification', 'meaning', 'order'];
 
-    /**
-     * @return string
-     */
     public function getCertification(): string
     {
         return $this->certification;
     }
 
-    /**
-     * @param string $certification
-     * @return Certification
-     */
     public function setCertification(string $certification): Certification
     {
         $this->certification = $certification;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function getMeaning(): string
     {
         return $this->meaning;
     }
 
-    /**
-     * @param string $meaning
-     * @return Certification
-     */
     public function setMeaning(string $meaning): Certification
     {
         $this->meaning = $meaning;
+
         return $this;
     }
 
-    /**
-     * @return int
-     */
     public function getOrder(): int
     {
         return $this->order;
     }
 
-    /**
-     * @param int $order
-     * @return Certification
-     */
     public function setOrder(int $order): Certification
     {
         $this->order = $order;
+
         return $this;
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function toArray(): array
     {

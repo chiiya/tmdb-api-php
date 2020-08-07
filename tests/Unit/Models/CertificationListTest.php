@@ -26,7 +26,7 @@ class CertificationListTest extends TestCase
                     'meaning' => 'All ages admitted.',
                     'order' => 1,
                 ],
-            ]
+            ],
         ], $model->toArray());
     }
 
@@ -36,7 +36,7 @@ class CertificationListTest extends TestCase
         $model
             ->setCountry('US')
             ->setCertifications(new Collection([CertificationTest::getModel()]));
+
         return $model;
     }
-
 }

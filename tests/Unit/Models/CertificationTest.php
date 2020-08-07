@@ -32,6 +32,7 @@ class CertificationTest extends TestCase
             ->setCertification('G')
             ->setMeaning('All ages admitted.')
             ->setOrder(1);
+
         return $model;
     }
 }

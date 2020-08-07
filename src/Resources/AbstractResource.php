@@ -13,7 +13,6 @@ abstract class AbstractResource
 
     /**
      * AbstractResource constructor.
-     * @param Client $client
      */
     public function __construct(Client $client)
     {
@@ -22,9 +21,6 @@ abstract class AbstractResource
 
     /**
      * Get a list of all entities.
-     *
-     * @param string $path
-     * @param array $filters
      *
      * @return array
      */
@@ -36,26 +32,20 @@ abstract class AbstractResource
     /**
      * Execute a request on this resource.
      *
-     * @param string $method
-     * @param string $url
-     * @param array $filters
-     * @param JsonSerializable|null $class
+     * @throws \GuzzleHttp\Exception\GuzzleException
      *
      * @return array
-     *
-     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     protected function execute(string $method, string $url, array $filters = [], ?JsonSerializable $class = null)
     {
         $request = new Request($method, $url, $this->commonHeaders(), $class ? json_encode($class) : null);
         $response = $this->client->getGateway()->request($request, $filters);
+
         return json_decode($response->getBody(), true);
     }
 
     /**
      * Common HTTP headers for all requests.
-     *
-     * @return array
      */
     protected function commonHeaders(): array
     {
