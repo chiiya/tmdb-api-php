@@ -1,6 +1,7 @@
 <br />
 <div align="center">
   <p align="center">
+    <a href="https://app.circleci.com/pipelines/github/chiiya/tmdb-api-php" target="_blank"><img src="https://circleci.com/gh/chiiya/tmdb-api-php.svg?style=svg"></a>
     <a href="https://php.net/" target="_blank"><img src="https://img.shields.io/badge/php-%3E%3D%207.2-8892BF.svg"></a>
     <a href="#quality-assurance" target="_blank"><img src="https://img.shields.io/badge/qa--level-high-success"></a>
   </p>
