@@ -1,17 +1,17 @@
 <br />
 <div align="center">
-  <p align="center">
-    <a href="https://app.circleci.com/pipelines/github/chiiya/tmdb-api-php" target="_blank"><img src="https://circleci.com/gh/chiiya/tmdb-api-php.svg?style=shield"></a>
-    <a href="https://codecov.io/gh/chiiya/tmdb-api-php">
-      <img src="https://codecov.io/gh/chiiya/tmdb-api-php/branch/master/graph/badge.svg" />
-    </a>
-    <a href="https://php.net/" target="_blank"><img src="https://img.shields.io/badge/php-%3E%3D%207.2-8892BF.svg"></a>
-    <a href="#quality-assurance" target="_blank"><img src="https://img.shields.io/badge/qa--level-high-success"></a>
-  </p>
-
   <strong>
     <h2 align="center">TMDB API (PHP)</h2>
   </strong>
+  
+  <p align="center">
+      <a href="https://app.circleci.com/pipelines/github/chiiya/tmdb-api-php" target="_blank"><img src="https://circleci.com/gh/chiiya/tmdb-api-php.svg?style=shield"></a>
+      <a href="https://codecov.io/gh/chiiya/tmdb-api-php">
+        <img src="https://codecov.io/gh/chiiya/tmdb-api-php/branch/master/graph/badge.svg" />
+      </a>
+      <a href="https://php.net/" target="_blank"><img src="https://img.shields.io/badge/php-%3E%3D%207.2-8892BF.svg"></a>
+      <a href="#quality-assurance" target="_blank"><img src="https://img.shields.io/badge/qa--level-high-success"></a>
+    </p>
 
   <p align="center">
     📺 PHP wrapper for the TMDB API. <strong>Early WIP, not for usage.</strong>
@@ -111,10 +111,9 @@ git add -u && !!
 
 #### Tests
 
-Run the tests with `just test`. This will run both unit and integration tests
-for all modules. A code coverage report can be generated with
-`just coverage`. This will take **significantly** longer than just running
-the tests normally.
+Run the tests with `just test`. This will run all unit tests. A code coverage 
+report can be generated with `just coverage`. This will take **significantly** 
+longer than just running the tests normally.
 
 #### Quality Assurance
 
