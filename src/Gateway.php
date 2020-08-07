@@ -43,10 +43,8 @@ class Gateway
      */
     public function request(RequestInterface $request, array $filters = []): ResponseInterface
     {
-        if ($this->token !== null) {
-            $request = $request->withHeader('Authorization', 'Bearer '.$this->token);
-            $request = $request->withUri(new Uri(rtrim($this->host, '/').'/'.$request->getUri()));
-        }
+        $request = $request->withUri(new Uri(rtrim($this->host, '/').'/'.$request->getUri()));
+        $request = $request->withHeader('Authorization', 'Bearer '.$this->token);
 
         $this->registerRetryMiddleware();
 

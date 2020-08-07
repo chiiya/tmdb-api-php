@@ -2,7 +2,6 @@
 
 namespace Chiiya\Tmdb\Repositories;
 
-use Chiiya\Tmdb\Client;
 use Chiiya\Tmdb\Common\Collection;
 use Chiiya\Tmdb\Factories\CertificationFactory;
 use Chiiya\Tmdb\Factories\FactoryInterface;

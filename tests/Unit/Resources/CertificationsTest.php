@@ -2,26 +2,11 @@
 
 namespace Chiiya\Tmdb\Tests\Unit\Resources;
 
-use BlastCloud\Guzzler\UsesGuzzler;
-use Chiiya\Tmdb\Client;
-use Chiiya\Tmdb\Tests\MocksApiRequests;
+use Chiiya\Tmdb\Tests\ApiTestCase;
 use GuzzleHttp\Psr7\Response;
-use PHPUnit\Framework\TestCase;
 
-class CertificationsTest extends TestCase
+class CertificationsTest extends ApiTestCase
 {
-    use UsesGuzzler;
-    use MocksApiRequests;
-
-    protected $client;
-
-    public function setUp(): void
-    {
-        parent::setUp();
-        $client = $this->guzzler->getClient();
-        $this->client = new Client('token', ['client' => $client]);
-    }
-
     public function test_movie_certifications(): void
     {
         $this->guzzler->expects($this->once())
