@@ -10,7 +10,7 @@
   </strong>
 
   <p align="center">
-    📺 PHP wrapper for the TMDB API.
+    📺 PHP wrapper for the TMDB API. <strong>Early WIP, not for usage.</strong>
   </p>
 
   <p align="center">
