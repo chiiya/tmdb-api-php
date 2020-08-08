@@ -7,7 +7,7 @@ use Chiiya\Tmdb\Models\Change;
 class ChangesResponse extends PaginatedResponse
 {
     /** @var Change[] */
-    protected $results = [];
+    private $results = [];
 
     /**
      * @return Change[]
@@ -22,6 +22,7 @@ class ChangesResponse extends PaginatedResponse
      */
     public function setResults(array $results): ChangesResponse
     {
+        $this->results = [];
         foreach ($results as $result) {
             $this->addResult($result);
         }

@@ -15,10 +15,7 @@
   "require": {
     "php": "^7.2",
     "ext-json": "*",
-    "dusank/knapsack": "^10.0",
-    "friendsofphp/php-cs-fixer": "^2.16",
     "guzzlehttp/guzzle": "^7.0",
-    "nesbot/carbon": "^1 || ^2",
     "phpdocumentor/reflection-docblock": "^5.2",
     "radebatz/property-info-extras": "^1.2",
     "symfony/options-resolver": "^5.1",
@@ -28,6 +25,7 @@
   },
   "require-dev": {
     "blastcloud/guzzler": "^2.0",
+    "friendsofphp/php-cs-fixer": "^2.16",
     "mockery/mockery": "^1.3",
     "phpunit/phpunit": "^8.0",
     "symfony/var-dumper": "^4.4"

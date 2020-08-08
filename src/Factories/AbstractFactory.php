@@ -2,7 +2,6 @@
 
 namespace Chiiya\Tmdb\Factories;
 
-use Chiiya\Tmdb\Common\Collection;
 use Chiiya\Tmdb\Models\Entity;
 use RuntimeException;
 
@@ -17,10 +16,8 @@ abstract class AbstractFactory implements FactoryInterface
 
     /**
      * Convert an array with a collection of items to a hydrated object collection.
-     *
-     * @return Collection
      */
-    abstract public function createCollection(array $data = []);
+    abstract public function createCollection(array $data = []): array;
 
     /**
      * Hydrate the object with data.

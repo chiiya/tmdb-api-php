@@ -2,7 +2,6 @@
 
 namespace Chiiya\Tmdb\Factories;
 
-use Chiiya\Tmdb\Common\Collection;
 use Chiiya\Tmdb\Models\Certification;
 use Chiiya\Tmdb\Models\CertificationList;
 
@@ -19,7 +18,7 @@ class CertificationFactory extends AbstractFactory
     /**
      * {@inheritdoc}
      */
-    public function createCollection(array $data = [])
+    public function createCollection(array $data = []): array
     {
         $data = $data['certifications'] ?? [];
 
@@ -34,10 +33,10 @@ class CertificationFactory extends AbstractFactory
                 $list[] = $this->create($certification);
             }
 
-            $item->getCertifications()->setInput($list);
+            $item->setCertifications($list);
             $items[] = $item;
         }
 
-        return new Collection($items);
+        return $items;
     }
 }

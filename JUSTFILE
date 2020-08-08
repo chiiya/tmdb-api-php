@@ -13,7 +13,9 @@ PHPUNIT := 'vendor/bin/phpunit -d xdebug.max_nesting_level=250 -d memory_limit=1
 @coverage:
 	echo "Running unit and integration tests"; \
 	echo "Once completed, the generated code coverage report can be found under ./build)"; \
-	php {{PHPUNIT}} -d xdebug.coverage_enable=1; \
+	sudo phpenmod -s cli xdebug;
+	php {{PHPUNIT}}; \
+	sudo phpdismod -s cli xdebug;
 
 # Lint files
 @lint:

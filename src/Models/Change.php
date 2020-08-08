@@ -5,9 +5,9 @@ namespace Chiiya\Tmdb\Models;
 class Change extends Entity
 {
     /** @var int */
-    protected $id;
+    private $id;
     /** @var bool|null */
-    protected $adult;
+    private $adult;
 
     public function getId(): int
     {

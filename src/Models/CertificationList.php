@@ -2,19 +2,12 @@
 
 namespace Chiiya\Tmdb\Models;
 
-use Chiiya\Tmdb\Common\Collection;
-
 class CertificationList extends Entity
 {
     /** @var string */
     private $country;
-    /** @var Certification[]|Collection */
-    private $certifications;
-
-    public function __construct()
-    {
-        $this->certifications = new Collection([]);
-    }
+    /** @var Certification[] */
+    private $certifications = [];
 
     public function getCountry(): string
     {
@@ -29,7 +22,7 @@ class CertificationList extends Entity
     }
 
     /**
-     * @return Certification[]|Collection
+     * @return Certification[]
      */
     public function getCertifications()
     {
@@ -37,7 +30,7 @@ class CertificationList extends Entity
     }
 
     /**
-     * @param Certification[]|Collection $certifications
+     * @param Certification[] $certifications
      */
     public function setCertifications($certifications): CertificationList
     {
@@ -53,7 +46,7 @@ class CertificationList extends Entity
     {
         return [
             'country' => $this->getCountry(),
-            'certifications' => $this->getCertifications()->toArray(),
+            'certifications' => $this->getCertifications(),
         ];
     }
 }

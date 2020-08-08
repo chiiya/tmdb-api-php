@@ -2,7 +2,6 @@
 
 namespace Chiiya\Tmdb\Tests\Unit\Models;
 
-use Chiiya\Tmdb\Common\Collection;
 use Chiiya\Tmdb\Models\CertificationList;
 use PHPUnit\Framework\TestCase;
 
@@ -12,7 +11,7 @@ class CertificationListTest extends TestCase
     {
         $model = $this->getModel();
         $this->assertEquals('US', $model->getCountry());
-        $this->assertEquals('G', $model->getCertifications()->first()->getCertification());
+        $this->assertEquals('G', $model->getCertifications()[0]->getCertification());
     }
 
     public function test_to_array(): void
@@ -20,13 +19,7 @@ class CertificationListTest extends TestCase
         $model = $this->getModel();
         $this->assertEquals([
             'country' => 'US',
-            'certifications' => [
-                [
-                    'certification' => 'G',
-                    'meaning' => 'All ages admitted.',
-                    'order' => 1,
-                ],
-            ],
+            'certifications' => [CertificationTest::getModel()],
         ], $model->toArray());
     }
 
@@ -35,7 +28,7 @@ class CertificationListTest extends TestCase
         $model = new CertificationList();
         $model
             ->setCountry('US')
-            ->setCertifications(new Collection([CertificationTest::getModel()]));
+            ->setCertifications([CertificationTest::getModel()]);
 
         return $model;
     }

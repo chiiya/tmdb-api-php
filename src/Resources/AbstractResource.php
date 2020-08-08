@@ -3,6 +3,7 @@
 namespace Chiiya\Tmdb\Resources;
 
 use Chiiya\Tmdb\Client;
+use Chiiya\Tmdb\Common\QueryParameterInterface;
 use GuzzleHttp\Psr7\Request;
 use JsonSerializable;
 
@@ -39,7 +40,13 @@ abstract class AbstractResource
     protected function execute(string $method, string $url, array $filters = [], ?JsonSerializable $class = null)
     {
         $request = new Request($method, $url, $this->commonHeaders(), $class ? json_encode($class) : null);
-        $response = $this->client->getGateway()->request($request, $filters);
+        foreach ($filters as $key => $filter) {
+            if ($filter instanceof QueryParameterInterface) {
+                unset($filters[$key]);
+                $filters[$filter->getKey()] = $filter->getValue();
+            }
+        }
+        $response = $this->client->getGateway()->request($request, ['query' => $filters]);
 
         return json_decode($response->getBody(), true);
     }
