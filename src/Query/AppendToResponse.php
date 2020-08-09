@@ -1,11 +1,12 @@
 <?php
 
-namespace Chiiya\Tmdb\Common;
+namespace Chiiya\Tmdb\Query;
 
 class AppendToResponse implements QueryParameterInterface
 {
     public const IMAGES = 'images';
     public const TRANSLATIONS = 'translations';
+    public const ALTERNATIVE_NAMES = 'alternative_names';
 
     /** @var array */
     protected $appends;

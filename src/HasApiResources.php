@@ -5,6 +5,7 @@ namespace Chiiya\Tmdb;
 use Chiiya\Tmdb\Resources\Certifications;
 use Chiiya\Tmdb\Resources\Changes;
 use Chiiya\Tmdb\Resources\Collections;
+use Chiiya\Tmdb\Resources\Companies;
 
 trait HasApiResources
 {
@@ -21,5 +22,10 @@ trait HasApiResources
     public function collections(): Collections
     {
         return new Collections($this);
+    }
+
+    public function companies(): Companies
+    {
+        return new Companies($this);
     }
 }

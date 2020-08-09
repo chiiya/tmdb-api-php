@@ -1,6 +1,6 @@
 <?php
 
-namespace Chiiya\Tmdb\Common;
+namespace Chiiya\Tmdb\Query;
 
 interface QueryParameterInterface
 {

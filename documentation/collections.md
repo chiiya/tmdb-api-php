@@ -3,7 +3,7 @@
 #### Direct Usage
 ```php
 use Chiiya\Tmdb\Client;
-use Chiiya\Tmdb\Common\AppendToResponse;
+use Chiiya\Tmdb\Query\AppendToResponse;
 
 $client = new Client('token');
 // Get collection details
@@ -24,7 +24,7 @@ var_dump($response['translations'][0]['english_name']); // -> 'Arabic'
 #### Repository Usage
 ```php
 use Chiiya\Tmdb\Client;
-use Chiiya\Tmdb\Common\AppendToResponse;
+use Chiiya\Tmdb\Query\AppendToResponse;
 use Chiiya\Tmdb\Repositories\CollectionRepository;
 
 $repository = new CollectionRepository(new Client('token'));

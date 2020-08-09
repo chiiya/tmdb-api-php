@@ -2,19 +2,28 @@
 
 namespace Chiiya\Tmdb\Common;
 
-use Chiiya\Tmdb\Models\Image;
+use Chiiya\Tmdb\Models\Image\Image;
 
 class ResponseHelper
 {
     public static function flatten(array $response): array
     {
-        return self::flattenImages(self::flattenTranslations($response));
+        return self::flattenImages(self::flattenTranslations(self::flattenAlternativeNames($response)));
     }
 
     public static function flattenTranslations(array $response): array
     {
         if (isset($response['translations'], $response['translations']['translations'])) {
             $response['translations'] = $response['translations']['translations'];
+        }
+
+        return $response;
+    }
+
+    public static function flattenAlternativeNames(array $response): array
+    {
+        if (isset($response['alternative_names'], $response['alternative_names']['results'])) {
+            $response['alternative_names'] = $response['alternative_names']['results'];
         }
 
         return $response;
@@ -27,6 +36,8 @@ class ResponseHelper
                 $response[$key] = $response['images'][$key];
             }
         }
+
+        unset($response['images']);
 
         return $response;
     }

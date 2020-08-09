@@ -2,7 +2,7 @@
 
 namespace Chiiya\Tmdb\Tests\Unit\Repositories;
 
-use Chiiya\Tmdb\Common\AppendToResponse;
+use Chiiya\Tmdb\Query\AppendToResponse;
 use Chiiya\Tmdb\Repositories\CollectionRepository;
 use Chiiya\Tmdb\Tests\ApiTestCase;
 use GuzzleHttp\Psr7\Response;

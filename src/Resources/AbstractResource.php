@@ -3,7 +3,7 @@
 namespace Chiiya\Tmdb\Resources;
 
 use Chiiya\Tmdb\Client;
-use Chiiya\Tmdb\Common\QueryParameterInterface;
+use Chiiya\Tmdb\Query\QueryParameterInterface;
 use GuzzleHttp\Psr7\Request;
 use JsonSerializable;
 

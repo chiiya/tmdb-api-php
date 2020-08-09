@@ -3,6 +3,7 @@
 namespace Chiiya\Tmdb\Models;
 
 use Chiiya\Tmdb\Models\Image\BackdropImage;
+use Chiiya\Tmdb\Models\Image\Image;
 use Chiiya\Tmdb\Models\Image\PosterImage;
 
 class Collection extends Entity
@@ -115,6 +116,8 @@ class Collection extends Entity
     }
 
     /**
+     * Available when using append_to_response.
+     *
      * @return Image[]
      */
     public function getImages(): array
@@ -123,6 +126,8 @@ class Collection extends Entity
     }
 
     /**
+     * Available when using append_to_response.
+     *
      * @return PosterImage[]|null
      */
     public function getPosters(): ?array
@@ -151,6 +156,8 @@ class Collection extends Entity
     }
 
     /**
+     * Available when using append_to_response.
+     *
      * @return BackdropImage[]|null
      */
     public function getBackdrops(): ?array

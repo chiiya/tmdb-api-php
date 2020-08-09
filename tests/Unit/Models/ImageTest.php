@@ -2,7 +2,12 @@
 
 namespace Chiiya\Tmdb\Tests\Unit\Models;
 
-use Chiiya\Tmdb\Models\Image;
+use Chiiya\Tmdb\Models\Image\BackdropImage;
+use Chiiya\Tmdb\Models\Image\Image;
+use Chiiya\Tmdb\Models\Image\LogoImage;
+use Chiiya\Tmdb\Models\Image\PosterImage;
+use Chiiya\Tmdb\Models\Image\ProfileImage;
+use Chiiya\Tmdb\Models\Image\StillImage;
 use PHPUnit\Framework\TestCase;
 
 class ImageTest extends TestCase
@@ -18,11 +23,11 @@ class ImageTest extends TestCase
         $this->assertEquals(10, $model->getVoteCount());
         $this->assertEquals(5.0, $model->getVoteAverage());
 
-        $this->assertEquals(Image::FORMAT_POSTER, (new Image\PosterImage())->getType());
-        $this->assertEquals(Image::FORMAT_BACKDROP, (new Image\BackdropImage())->getType());
-        $this->assertEquals(Image::FORMAT_PROFILE, (new Image\ProfileImage())->getType());
-        $this->assertEquals(Image::FORMAT_STILL, (new Image\StillImage())->getType());
-        $this->assertEquals(Image::FORMAT_LOGO, (new Image\LogoImage())->getType());
+        $this->assertEquals(Image::FORMAT_POSTER, (new PosterImage())->getType());
+        $this->assertEquals(Image::FORMAT_BACKDROP, (new BackdropImage())->getType());
+        $this->assertEquals(Image::FORMAT_PROFILE, (new ProfileImage())->getType());
+        $this->assertEquals(Image::FORMAT_STILL, (new StillImage())->getType());
+        $this->assertEquals(Image::FORMAT_LOGO, (new LogoImage())->getType());
 
         $this->assertEquals('poster.jpg', (string) $model);
     }
@@ -43,7 +48,7 @@ class ImageTest extends TestCase
 
     public static function getModel()
     {
-        $model = new Image\PosterImage();
+        $model = new PosterImage();
         $model
             ->setAspectRatio(1.0)
             ->setHeight(200)

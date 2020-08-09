@@ -1,6 +1,8 @@
 <?php
 
-namespace Chiiya\Tmdb\Models;
+namespace Chiiya\Tmdb\Models\Image;
+
+use Chiiya\Tmdb\Models\Entity;
 
 abstract class Image extends Entity
 {
@@ -19,26 +21,27 @@ abstract class Image extends Entity
     ];
 
     /** @var float */
-    private $aspectRatio;
+    protected $aspectRatio;
     /** @var string */
-    private $filePath;
+    protected $filePath;
     /** @var int */
-    private $height;
+    protected $height;
     /** @var int */
-    private $width;
-    /** @var string|null */
-    private $iso6391;
+    protected $width;
     /** @var int */
-    private $voteCount;
+    protected $voteCount;
     /** @var float */
-    private $voteAverage;
+    protected $voteAverage;
 
     public function getAspectRatio(): float
     {
         return $this->aspectRatio;
     }
 
-    public function setAspectRatio(float $aspectRatio): Image
+    /**
+     * @return static
+     */
+    public function setAspectRatio(float $aspectRatio)
     {
         $this->aspectRatio = $aspectRatio;
 
@@ -50,7 +53,10 @@ abstract class Image extends Entity
         return $this->filePath;
     }
 
-    public function setFilePath(string $filePath): Image
+    /**
+     * @return static
+     */
+    public function setFilePath(string $filePath)
     {
         $this->filePath = $filePath;
 
@@ -62,7 +68,10 @@ abstract class Image extends Entity
         return $this->height;
     }
 
-    public function setHeight(int $height): Image
+    /**
+     * @return static
+     */
+    public function setHeight(int $height)
     {
         $this->height = $height;
 
@@ -74,21 +83,12 @@ abstract class Image extends Entity
         return $this->width;
     }
 
-    public function setWidth(int $width): Image
+    /**
+     * @return static
+     */
+    public function setWidth(int $width)
     {
         $this->width = $width;
-
-        return $this;
-    }
-
-    public function getIso6391(): ?string
-    {
-        return $this->iso6391;
-    }
-
-    public function setIso6391(?string $iso6391): Image
-    {
-        $this->iso6391 = $iso6391;
 
         return $this;
     }
@@ -98,7 +98,10 @@ abstract class Image extends Entity
         return $this->voteCount;
     }
 
-    public function setVoteCount(int $voteCount): Image
+    /**
+     * @return static
+     */
+    public function setVoteCount(int $voteCount)
     {
         $this->voteCount = $voteCount;
 
@@ -110,7 +113,10 @@ abstract class Image extends Entity
         return $this->voteAverage;
     }
 
-    public function setVoteAverage(float $voteAverage): Image
+    /**
+     * @return static
+     */
+    public function setVoteAverage(float $voteAverage)
     {
         $this->voteAverage = $voteAverage;
 
@@ -127,7 +133,6 @@ abstract class Image extends Entity
             'file_path' => $this->getFilePath(),
             'height' => $this->getHeight(),
             'width' => $this->getWidth(),
-            'iso_639_1' => $this->getIso6391(),
             'vote_count' => $this->getVoteCount(),
             'vote_average' => $this->getVoteAverage(),
         ];
