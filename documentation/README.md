@@ -5,3 +5,4 @@
 - [Changes](changes.md)
 - [Collections](collections.md)
 - [Companies](companies.md)
+- [Configuration](configuration.md)

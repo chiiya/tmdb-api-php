@@ -6,6 +6,7 @@ use Chiiya\Tmdb\Resources\Certifications;
 use Chiiya\Tmdb\Resources\Changes;
 use Chiiya\Tmdb\Resources\Collections;
 use Chiiya\Tmdb\Resources\Companies;
+use Chiiya\Tmdb\Resources\Configuration;
 
 trait HasApiResources
 {
@@ -27,5 +28,10 @@ trait HasApiResources
     public function companies(): Companies
     {
         return new Companies($this);
+    }
+
+    public function configuration(): Configuration
+    {
+        return new Configuration($this);
     }
 }
