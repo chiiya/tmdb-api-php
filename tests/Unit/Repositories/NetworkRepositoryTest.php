@@ -23,9 +23,9 @@ class NetworkRepositoryTest extends ApiTestCase
         $this->guzzler->expects($this->once())
             ->endpoint($this->url('network/1'), 'GET')
             ->will(new Response(200, [], $this->getMockResponse('networks/details')));
-        $company = $this->repository->getNetwork(1);
-        $this->assertEquals(1, $company->getId());
-        $this->assertEquals('Fuji TV', $company->getName());
+        $network = $this->repository->getNetwork(1);
+        $this->assertEquals(1, $network->getId());
+        $this->assertEquals('Fuji TV', $network->getName());
     }
 
     public function test_network_details_with_appends(): void
@@ -33,18 +33,18 @@ class NetworkRepositoryTest extends ApiTestCase
         $this->guzzler->expects($this->once())
             ->endpoint($this->url('network/1?append_to_response=alternative_names,images'), 'GET')
             ->will(new Response(200, [], $this->getMockResponse('networks/appends')));
-        $company = $this->repository->getNetwork(1, [
+        $network = $this->repository->getNetwork(1, [
             new AppendToResponse([AppendToResponse::ALTERNATIVE_NAMES, AppendToResponse::IMAGES]),
         ]);
-        $this->assertEquals(1, $company->getId());
-        $this->assertEquals('Fuji TV', $company->getName());
-        $this->assertEquals('Fuji Television', $company->getAlternativeNames()[0]->getName());
-        $this->assertEquals('/yS5UJjsSdZXML0YikWTYYHLPKhQ.png', $company->getLogos()[0]->getFilePath());
-        $this->assertFalse($company->getLogos()[0]->isPNG());
-        $this->assertTrue($company->getLogos()[0]->isSVG());
+        $this->assertEquals(1, $network->getId());
+        $this->assertEquals('Fuji TV', $network->getName());
+        $this->assertEquals('Fuji Television', $network->getAlternativeNames()[0]->getName());
+        $this->assertEquals('/yS5UJjsSdZXML0YikWTYYHLPKhQ.png', $network->getLogos()[0]->getFilePath());
+        $this->assertFalse($network->getLogos()[0]->isPNG());
+        $this->assertTrue($network->getLogos()[0]->isSVG());
     }
 
-    public function test_company_images(): void
+    public function test_network_images(): void
     {
         $this->guzzler->expects($this->once())
             ->endpoint($this->url('network/1/images'), 'GET')
@@ -53,7 +53,7 @@ class NetworkRepositoryTest extends ApiTestCase
         $this->assertEquals('/yS5UJjsSdZXML0YikWTYYHLPKhQ.png', $images[0]->getFilePath());
     }
 
-    public function test_company_alternative_names(): void
+    public function test_network_alternative_names(): void
     {
         $this->guzzler->expects($this->once())
             ->endpoint($this->url('network/1/alternative_names'), 'GET')

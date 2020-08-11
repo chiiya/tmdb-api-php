@@ -10,6 +10,7 @@ use Chiiya\Tmdb\Resources\Configuration;
 use Chiiya\Tmdb\Resources\Genres;
 use Chiiya\Tmdb\Resources\Keywords;
 use Chiiya\Tmdb\Resources\Networks;
+use Chiiya\Tmdb\Resources\Reviews;
 
 trait HasApiResources
 {
@@ -51,5 +52,10 @@ trait HasApiResources
     public function networks(): Networks
     {
         return new Networks($this);
+    }
+
+    public function reviews(): Reviews
+    {
+        return new Reviews($this);
     }
 }

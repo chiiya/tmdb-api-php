@@ -9,3 +9,4 @@
 - [Genres](genres.md)
 - [Keywords](keywords.md)
 - [Networks](networks.md)
+- [Reviews](reviews.md)
