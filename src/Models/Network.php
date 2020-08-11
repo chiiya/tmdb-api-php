@@ -4,22 +4,18 @@ namespace Chiiya\Tmdb\Models;
 
 use Chiiya\Tmdb\Models\Image\LogoImage;
 
-class Company extends Entity
+class Network extends Entity
 {
     /** @var int */
     private $id;
     /** @var string */
     private $name;
     /** @var string */
-    private $description;
-    /** @var string|null */
-    private $logoPath;
+    private $originCountry;
     /** @var string */
     private $headquarters;
     /** @var string */
     private $homepage;
-    /** @var string|null */
-    private $originCountry;
     /** @var AlternativeName[]|null */
     private $alternativeNames;
     /** @var LogoImage[]|null */
@@ -30,7 +26,7 @@ class Company extends Entity
         return $this->id;
     }
 
-    public function setId(int $id): Company
+    public function setId(int $id): Network
     {
         $this->id = $id;
 
@@ -42,33 +38,21 @@ class Company extends Entity
         return $this->name;
     }
 
-    public function setName(string $name): Company
+    public function setName(string $name): Network
     {
         $this->name = $name;
 
         return $this;
     }
 
-    public function getDescription(): string
+    public function getOriginCountry(): string
     {
-        return $this->description;
+        return $this->originCountry;
     }
 
-    public function setDescription(string $description): Company
+    public function setOriginCountry(string $originCountry): Network
     {
-        $this->description = $description;
-
-        return $this;
-    }
-
-    public function getLogoPath(): ?string
-    {
-        return $this->logoPath;
-    }
-
-    public function setLogoPath(?string $logoPath): Company
-    {
-        $this->logoPath = $logoPath;
+        $this->originCountry = $originCountry;
 
         return $this;
     }
@@ -78,7 +62,7 @@ class Company extends Entity
         return $this->headquarters;
     }
 
-    public function setHeadquarters(string $headquarters): Company
+    public function setHeadquarters(string $headquarters): Network
     {
         $this->headquarters = $headquarters;
 
@@ -90,21 +74,9 @@ class Company extends Entity
         return $this->homepage;
     }
 
-    public function setHomepage(string $homepage): Company
+    public function setHomepage(string $homepage): Network
     {
         $this->homepage = $homepage;
-
-        return $this;
-    }
-
-    public function getOriginCountry(): ?string
-    {
-        return $this->originCountry;
-    }
-
-    public function setOriginCountry(?string $originCountry): Company
-    {
-        $this->originCountry = $originCountry;
 
         return $this;
     }
@@ -122,7 +94,7 @@ class Company extends Entity
     /**
      * @param AlternativeName[] $alternativeNames
      */
-    public function setAlternativeNames(array $alternativeNames): Company
+    public function setAlternativeNames(array $alternativeNames): Network
     {
         $this->alternativeNames = [];
         foreach ($alternativeNames as $alternativeName) {
@@ -132,7 +104,7 @@ class Company extends Entity
         return $this;
     }
 
-    public function addAlternativeName(AlternativeName $alternativeName): Company
+    public function addAlternativeName(AlternativeName $alternativeName): Network
     {
         $this->alternativeNames[] = $alternativeName;
 
@@ -152,7 +124,7 @@ class Company extends Entity
     /**
      * @param LogoImage[] $logos
      */
-    public function setLogos(array $logos): Company
+    public function setLogos(array $logos): Network
     {
         $this->logos = [];
         foreach ($logos as $logo) {
@@ -162,7 +134,7 @@ class Company extends Entity
         return $this;
     }
 
-    public function addLogo(LogoImage $logo): Company
+    public function addLogo(LogoImage $logo): Network
     {
         $this->logos[] = $logo;
 
@@ -177,11 +149,9 @@ class Company extends Entity
         return [
             'id' => $this->getId(),
             'name' => $this->getName(),
-            'description' => $this->getDescription(),
-            'logo_path' => $this->getLogoPath(),
+            'origin_country' => $this->getOriginCountry(),
             'headquarters' => $this->getHeadquarters(),
             'homepage' => $this->getHomepage(),
-            'origin_country' => $this->getOriginCountry(),
             'alternative_names' => $this->getAlternativeNames(),
             'logos' => $this->getLogos(),
         ];

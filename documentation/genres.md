@@ -1,4 +1,4 @@
-## Changes
+## Genres
 
 #### Direct Usage
 ```php
