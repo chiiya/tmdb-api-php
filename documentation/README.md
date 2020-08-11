@@ -6,3 +6,4 @@
 - [Collections](collections.md)
 - [Companies](companies.md)
 - [Configuration](configuration.md)
+- [Genres](genres.md)

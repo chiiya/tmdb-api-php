@@ -7,6 +7,7 @@ use Chiiya\Tmdb\Resources\Changes;
 use Chiiya\Tmdb\Resources\Collections;
 use Chiiya\Tmdb\Resources\Companies;
 use Chiiya\Tmdb\Resources\Configuration;
+use Chiiya\Tmdb\Resources\Genres;
 
 trait HasApiResources
 {
@@ -33,5 +34,10 @@ trait HasApiResources
     public function configuration(): Configuration
     {
         return new Configuration($this);
+    }
+
+    public function genres(): Genres
+    {
+        return new Genres($this);
     }
 }
