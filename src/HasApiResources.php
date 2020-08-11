@@ -8,6 +8,7 @@ use Chiiya\Tmdb\Resources\Collections;
 use Chiiya\Tmdb\Resources\Companies;
 use Chiiya\Tmdb\Resources\Configuration;
 use Chiiya\Tmdb\Resources\Genres;
+use Chiiya\Tmdb\Resources\Keywords;
 
 trait HasApiResources
 {
@@ -39,5 +40,10 @@ trait HasApiResources
     public function genres(): Genres
     {
         return new Genres($this);
+    }
+
+    public function keywords(): Keywords
+    {
+        return new Keywords($this);
     }
 }
