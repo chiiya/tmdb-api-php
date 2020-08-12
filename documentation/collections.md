@@ -31,7 +31,7 @@ $repository = new CollectionRepository(new Client('token'));
 // Get collection details
 $response = $repository->getCollection(10);
 var_dump($response->getName()); // -> 'Star Wars Collection'
-var_dump($response->getParts()[0]->getTitle(); // -> 'Star Wars'
+var_dump($response->getParts()[0]->getTitle()); // -> 'Star Wars'
 // Eager load relationships
 $response = $repository->getCollection(10, [new AppendToResponse([AppendToResponse::IMAGES])]);
 var_dump($response->getBackdrops()[0]->getHeight()); // -> 1080

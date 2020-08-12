@@ -3,9 +3,10 @@
 namespace Chiiya\Tmdb\Repositories;
 
 use Chiiya\Tmdb\Common\ResponseHelper;
-use Chiiya\Tmdb\Models\Collection;
-use Chiiya\Tmdb\Models\Translation;
+use Chiiya\Tmdb\Models\Collection\Collection;
+use Chiiya\Tmdb\Models\Collection\Translation;
 use Chiiya\Tmdb\Responses\CollectionImagesResponse;
+use Symfony\Component\Serializer\Exception\ExceptionInterface;
 
 class CollectionRepository extends AbstractRepository
 {
@@ -15,6 +16,8 @@ class CollectionRepository extends AbstractRepository
      * @see https://developers.themoviedb.org/3/collections/get-collection-details
      *
      * @param int|string $id
+     *
+     * @throws ExceptionInterface
      */
     public function getCollection($id, array $parameters = []): Collection
     {
@@ -29,6 +32,8 @@ class CollectionRepository extends AbstractRepository
      * @see https://developers.themoviedb.org/3/collections/get-collection-images
      *
      * @param int|string $id
+     *
+     * @throws ExceptionInterface
      */
     public function getImages($id, array $parameters = []): CollectionImagesResponse
     {
@@ -44,13 +49,15 @@ class CollectionRepository extends AbstractRepository
      *
      * @param int|string $id
      *
+     * @throws ExceptionInterface
+     *
      * @return Translation[]
      */
     public function getTranslations($id, array $parameters = []): array
     {
         $response = $this->getResource()->getTranslations($id, $parameters)['translations'];
 
-        return $this->serializer->denormalize($response, 'Chiiya\Tmdb\Models\Translation[]');
+        return $this->serializer->denormalize($response, 'Chiiya\Tmdb\Models\Collection\Translation[]');
     }
 
     /**

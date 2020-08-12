@@ -2,7 +2,7 @@
 
 namespace Chiiya\Tmdb\Tests\Unit\Models;
 
-use Chiiya\Tmdb\Models\Collection;
+use Chiiya\Tmdb\Models\Collection\Collection;
 use PHPUnit\Framework\TestCase;
 
 class CollectionTest extends TestCase

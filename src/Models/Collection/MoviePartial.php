@@ -1,6 +1,8 @@
 <?php
 
-namespace Chiiya\Tmdb\Models;
+namespace Chiiya\Tmdb\Models\Collection;
+
+use Chiiya\Tmdb\Models\Entity;
 
 class MoviePartial extends Entity
 {

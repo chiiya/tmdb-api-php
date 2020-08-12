@@ -2,7 +2,7 @@
 
 namespace Chiiya\Tmdb\Tests\Unit\Models;
 
-use Chiiya\Tmdb\Models\TranslationData;
+use Chiiya\Tmdb\Models\Collection\TranslationData;
 use PHPUnit\Framework\TestCase;
 
 class TranslationDataTest extends TestCase

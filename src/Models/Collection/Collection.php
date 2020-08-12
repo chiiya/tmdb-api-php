@@ -1,7 +1,8 @@
 <?php
 
-namespace Chiiya\Tmdb\Models;
+namespace Chiiya\Tmdb\Models\Collection;
 
+use Chiiya\Tmdb\Models\Entity;
 use Chiiya\Tmdb\Models\Image\BackdropImage;
 use Chiiya\Tmdb\Models\Image\Image;
 use Chiiya\Tmdb\Models\Image\PosterImage;

@@ -2,7 +2,7 @@
 
 namespace Chiiya\Tmdb\Tests\Unit\Models;
 
-use Chiiya\Tmdb\Models\Translation;
+use Chiiya\Tmdb\Models\Collection\Translation;
 use PHPUnit\Framework\TestCase;
 
 class TranslationTest extends TestCase
@@ -25,7 +25,7 @@ class TranslationTest extends TestCase
             'iso_639_1' => 'de',
             'name' => 'Deutsch',
             'english_name' => 'German',
-            'data' => TranslationDataTest::getModel()->toArray(),
+            'data' => TranslationDataTest::getModel(),
         ], $model->toArray());
     }
 

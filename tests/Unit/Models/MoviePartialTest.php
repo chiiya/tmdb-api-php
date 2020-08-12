@@ -2,7 +2,7 @@
 
 namespace Chiiya\Tmdb\Tests\Unit\Models;
 
-use Chiiya\Tmdb\Models\MoviePartial;
+use Chiiya\Tmdb\Models\Collection\MoviePartial;
 use PHPUnit\Framework\TestCase;
 
 class MoviePartialTest extends TestCase
