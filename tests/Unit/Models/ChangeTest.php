@@ -9,27 +9,24 @@ class ChangeTest extends TestCase
 {
     public function test_getters_setters(): void
     {
-        $model = $this->getModel();
-        $this->assertEquals(10, $model->getId());
-        $this->assertEquals(false, $model->getAdult());
+        $attributes = $this->attributes();
+        $model = new Change($attributes);
+        $this->assertEquals($attributes['id'], $model->getId());
+        $this->assertEquals($attributes['adult'], $model->getAdult());
     }
 
     public function test_to_array(): void
     {
-        $model = $this->getModel();
-        $this->assertEquals([
-            'id' => 10,
-            'adult' => false,
-        ], $model->toArray());
+        $attributes = $this->attributes();
+        $model = new Change($attributes);
+        $this->assertEquals($attributes, $model->toArray());
     }
 
-    public static function getModel(): Change
+    protected function attributes(): array
     {
-        $model = new Change();
-        $model
-            ->setId(10)
-            ->setAdult(false);
-
-        return $model;
+        return [
+            'id' => 10,
+            'adult' => false,
+        ];
     }
 }

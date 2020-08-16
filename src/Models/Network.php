@@ -6,16 +6,11 @@ use Chiiya\Tmdb\Models\Image\LogoImage;
 
 class Network extends Entity
 {
-    /** @var int */
-    private $id;
-    /** @var string */
-    private $name;
-    /** @var string */
-    private $originCountry;
-    /** @var string */
-    private $headquarters;
-    /** @var string */
-    private $homepage;
+    private int $id;
+    private string $name;
+    private string $originCountry;
+    private string $headquarters;
+    private string $homepage;
     /** @var AlternativeName[]|null */
     private $alternativeNames;
     /** @var LogoImage[]|null */
@@ -26,11 +21,9 @@ class Network extends Entity
         return $this->id;
     }
 
-    public function setId(int $id): Network
+    public function setId(int $id): void
     {
         $this->id = $id;
-
-        return $this;
     }
 
     public function getName(): string
@@ -38,11 +31,9 @@ class Network extends Entity
         return $this->name;
     }
 
-    public function setName(string $name): Network
+    public function setName(string $name): void
     {
         $this->name = $name;
-
-        return $this;
     }
 
     public function getOriginCountry(): string
@@ -50,11 +41,9 @@ class Network extends Entity
         return $this->originCountry;
     }
 
-    public function setOriginCountry(string $originCountry): Network
+    public function setOriginCountry(string $originCountry): void
     {
         $this->originCountry = $originCountry;
-
-        return $this;
     }
 
     public function getHeadquarters(): string
@@ -62,11 +51,9 @@ class Network extends Entity
         return $this->headquarters;
     }
 
-    public function setHeadquarters(string $headquarters): Network
+    public function setHeadquarters(string $headquarters): void
     {
         $this->headquarters = $headquarters;
-
-        return $this;
     }
 
     public function getHomepage(): string
@@ -74,11 +61,9 @@ class Network extends Entity
         return $this->homepage;
     }
 
-    public function setHomepage(string $homepage): Network
+    public function setHomepage(string $homepage): void
     {
         $this->homepage = $homepage;
-
-        return $this;
     }
 
     /**
@@ -94,21 +79,17 @@ class Network extends Entity
     /**
      * @param AlternativeName[] $alternativeNames
      */
-    public function setAlternativeNames(array $alternativeNames): Network
+    public function setAlternativeNames(array $alternativeNames): void
     {
         $this->alternativeNames = [];
         foreach ($alternativeNames as $alternativeName) {
             $this->addAlternativeName($alternativeName);
         }
-
-        return $this;
     }
 
-    public function addAlternativeName(AlternativeName $alternativeName): Network
+    public function addAlternativeName(AlternativeName $alternativeName): void
     {
         $this->alternativeNames[] = $alternativeName;
-
-        return $this;
     }
 
     /**
@@ -124,21 +105,17 @@ class Network extends Entity
     /**
      * @param LogoImage[] $logos
      */
-    public function setLogos(array $logos): Network
+    public function setLogos(array $logos): void
     {
         $this->logos = [];
         foreach ($logos as $logo) {
             $this->addLogo($logo);
         }
-
-        return $this;
     }
 
-    public function addLogo(LogoImage $logo): Network
+    public function addLogo(LogoImage $logo): void
     {
         $this->logos[] = $logo;
-
-        return $this;
     }
 
     /**

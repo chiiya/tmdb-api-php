@@ -6,21 +6,18 @@ use Chiiya\Tmdb\Models\Entity;
 
 class Configuration extends Entity
 {
-    /** @var ImageConfiguration */
-    private $images;
+    private ImageConfiguration $images;
     /** @var string[] */
-    private $changeKeys;
+    private array $changeKeys;
 
     public function getImages(): ImageConfiguration
     {
         return $this->images;
     }
 
-    public function setImages(ImageConfiguration $images): Configuration
+    public function setImages(ImageConfiguration $images): void
     {
         $this->images = $images;
-
-        return $this;
     }
 
     /**
@@ -34,11 +31,9 @@ class Configuration extends Entity
     /**
      * @param string[] $changeKeys
      */
-    public function setChangeKeys(array $changeKeys): Configuration
+    public function setChangeKeys(array $changeKeys): void
     {
         $this->changeKeys = $changeKeys;
-
-        return $this;
     }
 
     /**

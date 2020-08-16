@@ -6,23 +6,18 @@ use Chiiya\Tmdb\Models\Entity;
 
 class TranslationData extends Entity
 {
-    /** @var string */
-    private $title;
-    /** @var string */
-    private $overview;
-    /** @var string */
-    private $homepage;
+    private string $title;
+    private string $overview;
+    private string $homepage;
 
     public function getTitle(): string
     {
         return $this->title;
     }
 
-    public function setTitle(string $title): TranslationData
+    public function setTitle(string $title): void
     {
         $this->title = $title;
-
-        return $this;
     }
 
     public function getOverview(): string
@@ -30,11 +25,9 @@ class TranslationData extends Entity
         return $this->overview;
     }
 
-    public function setOverview(string $overview): TranslationData
+    public function setOverview(string $overview): void
     {
         $this->overview = $overview;
-
-        return $this;
     }
 
     public function getHomepage(): string
@@ -42,11 +35,9 @@ class TranslationData extends Entity
         return $this->homepage;
     }
 
-    public function setHomepage(string $homepage): TranslationData
+    public function setHomepage(string $homepage): void
     {
         $this->homepage = $homepage;
-
-        return $this;
     }
 
     /**

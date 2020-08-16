@@ -6,8 +6,7 @@ use DateTimeInterface;
 
 trait HandlesDates
 {
-    /** @var string */
-    protected $date;
+    protected string $date;
 
     public function getValue(): string
     {

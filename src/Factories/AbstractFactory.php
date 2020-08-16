@@ -5,7 +5,7 @@ namespace Chiiya\Tmdb\Factories;
 use Chiiya\Tmdb\Models\Entity;
 use RuntimeException;
 
-abstract class AbstractFactory implements FactoryInterface
+abstract class AbstractFactory
 {
     /**
      * Convert an array to a hydrated object.

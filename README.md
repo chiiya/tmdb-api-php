@@ -8,7 +8,7 @@
       <a href="https://codecov.io/gh/chiiya/tmdb-api-php">
         <img src="https://codecov.io/gh/chiiya/tmdb-api-php/branch/master/graph/badge.svg" />
       </a>
-      <a href="https://php.net/" target="_blank"><img src="https://img.shields.io/badge/php-%3E%3D%207.2-8892BF.svg"></a>
+      <a href="https://php.net/" target="_blank"><img src="https://img.shields.io/badge/php-%3E%3D%207.4-8892BF.svg"></a>
       <a href="#quality-assurance" target="_blank"><img src="https://img.shields.io/badge/qa--level-high-success"></a>
     </p>
 

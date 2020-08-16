@@ -10,10 +10,8 @@ class Client
 
     public const TMDB_URI = 'https://api.themoviedb.org/3';
 
-    /** @var array */
-    protected $options = [];
-    /** @var Gateway */
-    protected $gateway;
+    protected array $options = [];
+    protected Gateway $gateway;
 
     /**
      * Client constructor.

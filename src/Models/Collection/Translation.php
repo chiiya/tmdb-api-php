@@ -6,19 +6,16 @@ use Chiiya\Tmdb\Models\AbstractTranslation;
 
 class Translation extends AbstractTranslation
 {
-    /** @var TranslationData */
-    private $data;
+    private TranslationData $data;
 
     public function getData(): TranslationData
     {
         return $this->data;
     }
 
-    public function setData(TranslationData $data): Translation
+    public function setData(TranslationData $data): void
     {
         $this->data = $data;
-
-        return $this;
     }
 
     public function toArray(): array

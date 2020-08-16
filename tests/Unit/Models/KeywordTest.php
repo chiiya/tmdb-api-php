@@ -3,33 +3,28 @@
 namespace Chiiya\Tmdb\Tests\Unit\Models;
 
 use Chiiya\Tmdb\Models\Keyword;
+use Chiiya\Tmdb\Tests\Fixtures\Attributes;
 use PHPUnit\Framework\TestCase;
 
 class KeywordTest extends TestCase
 {
     public function test_getters_setters(): void
     {
-        $model = $this->getModel();
-        $this->assertEquals(378, $model->getId());
-        $this->assertEquals('prison', $model->getName());
+        $attributes = $this->attributes();
+        $model = new Keyword($attributes);
+        $this->assertEquals($attributes['id'], $model->getId());
+        $this->assertEquals($attributes['name'], $model->getName());
     }
 
     public function test_to_array(): void
     {
-        $model = $this->getModel();
-        $this->assertEquals([
-            'id' => 378,
-            'name' => 'prison',
-        ], $model->toArray());
+        $attributes = $this->attributes();
+        $model = new Keyword($attributes);
+        $this->assertEquals($attributes, $model->toArray());
     }
 
-    public static function getModel(): Keyword
+    protected function attributes(): array
     {
-        $model = new Keyword();
-        $model
-            ->setId(378)
-            ->setName('prison');
-
-        return $model;
+        return Attributes::keywordAttributes();
     }
 }

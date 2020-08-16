@@ -6,20 +6,16 @@ use Chiiya\Tmdb\Models\Entity;
 use Chiiya\Tmdb\Models\Image\BackdropImage;
 use Chiiya\Tmdb\Models\Image\Image;
 use Chiiya\Tmdb\Models\Image\PosterImage;
+use Chiiya\Tmdb\Models\Movie\Movie;
 
 class Collection extends Entity
 {
-    /** @var int */
-    private $id;
-    /** @var string */
-    private $name;
-    /** @var string */
-    private $overview;
-    /** @var string|null */
-    private $posterPath;
-    /** @var string|null */
-    private $backdropPath;
-    /** @var MoviePartial[] */
+    private int $id;
+    private string $name;
+    private string $overview;
+    private ?string $posterPath;
+    private ?string $backdropPath;
+    /** @var Movie[] */
     private $parts = [];
     /** @var PosterImage[]|null */
     private $posters;
@@ -33,11 +29,9 @@ class Collection extends Entity
         return $this->id;
     }
 
-    public function setId(int $id): Collection
+    public function setId(int $id): void
     {
         $this->id = $id;
-
-        return $this;
     }
 
     public function getName(): string
@@ -45,11 +39,9 @@ class Collection extends Entity
         return $this->name;
     }
 
-    public function setName(string $name): Collection
+    public function setName(string $name): void
     {
         $this->name = $name;
-
-        return $this;
     }
 
     public function getOverview(): string
@@ -57,11 +49,9 @@ class Collection extends Entity
         return $this->overview;
     }
 
-    public function setOverview(string $overview): Collection
+    public function setOverview(string $overview): void
     {
         $this->overview = $overview;
-
-        return $this;
     }
 
     public function getPosterPath(): ?string
@@ -69,11 +59,9 @@ class Collection extends Entity
         return $this->posterPath;
     }
 
-    public function setPosterPath(?string $posterPath): Collection
+    public function setPosterPath(?string $posterPath): void
     {
         $this->posterPath = $posterPath;
-
-        return $this;
     }
 
     public function getBackdropPath(): ?string
@@ -81,15 +69,13 @@ class Collection extends Entity
         return $this->backdropPath;
     }
 
-    public function setBackdropPath(?string $backdropPath): Collection
+    public function setBackdropPath(?string $backdropPath): void
     {
         $this->backdropPath = $backdropPath;
-
-        return $this;
     }
 
     /**
-     * @return MoviePartial[]
+     * @return Movie[]
      */
     public function getParts(): array
     {
@@ -97,23 +83,19 @@ class Collection extends Entity
     }
 
     /**
-     * @param MoviePartial[] $parts
+     * @param Movie[] $parts
      */
-    public function setParts(array $parts): Collection
+    public function setParts(array $parts): void
     {
         $this->parts = [];
         foreach ($parts as $part) {
             $this->addPart($part);
         }
-
-        return $this;
     }
 
-    public function addPart(MoviePartial $partial): Collection
+    public function addPart(Movie $partial): void
     {
         $this->parts[] = $partial;
-
-        return $this;
     }
 
     /**
@@ -139,21 +121,17 @@ class Collection extends Entity
     /**
      * @param PosterImage[] $posters
      */
-    public function setPosters(array $posters): Collection
+    public function setPosters(array $posters): void
     {
         $this->posters = [];
         foreach ($posters as $poster) {
             $this->addPoster($poster);
         }
-
-        return $this;
     }
 
-    public function addPoster(PosterImage $image): Collection
+    public function addPoster(PosterImage $image): void
     {
         $this->posters[] = $image;
-
-        return $this;
     }
 
     /**
@@ -169,21 +147,17 @@ class Collection extends Entity
     /**
      * @param BackdropImage[] $backdrops
      */
-    public function setBackdrops(array $backdrops): Collection
+    public function setBackdrops(array $backdrops): void
     {
         $this->backdrops = [];
         foreach ($backdrops as $backdrop) {
             $this->addBackdrop($backdrop);
         }
-
-        return $this;
     }
 
-    public function addBackdrop(BackdropImage $image): Collection
+    public function addBackdrop(BackdropImage $image): void
     {
         $this->backdrops[] = $image;
-
-        return $this;
     }
 
     /**
@@ -199,21 +173,17 @@ class Collection extends Entity
     /**
      * @param Translation[] $translations
      */
-    public function setTranslations(array $translations): Collection
+    public function setTranslations(array $translations): void
     {
         $this->translations = [];
         foreach ($translations as $translation) {
             $this->addTranslation($translation);
         }
-
-        return $this;
     }
 
-    public function addTranslation(Translation $translation): Collection
+    public function addTranslation(Translation $translation): void
     {
         $this->translations[] = $translation;
-
-        return $this;
     }
 
     /**

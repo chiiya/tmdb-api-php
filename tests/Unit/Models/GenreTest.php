@@ -3,33 +3,28 @@
 namespace Chiiya\Tmdb\Tests\Unit\Models;
 
 use Chiiya\Tmdb\Models\Genre;
+use Chiiya\Tmdb\Tests\Fixtures\Attributes;
 use PHPUnit\Framework\TestCase;
 
 class GenreTest extends TestCase
 {
     public function test_getters_setters(): void
     {
-        $model = $this->getModel();
-        $this->assertEquals(35, $model->getId());
-        $this->assertEquals('Comedy', $model->getName());
+        $attributes = $this->attributes();
+        $model = new Genre($attributes);
+        $this->assertEquals($attributes['id'], $model->getId());
+        $this->assertEquals($attributes['name'], $model->getName());
     }
 
     public function test_to_array(): void
     {
-        $model = $this->getModel();
-        $this->assertEquals([
-            'id' => 35,
-            'name' => 'Comedy',
-        ], $model->toArray());
+        $attributes = $this->attributes();
+        $model = new Genre($attributes);
+        $this->assertEquals($attributes, $model->toArray());
     }
 
-    public static function getModel(): Genre
+    protected function attributes(): array
     {
-        $model = new Genre();
-        $model
-            ->setId(35)
-            ->setName('Comedy');
-
-        return $model;
+        return Attributes::genreAttributes();
     }
 }

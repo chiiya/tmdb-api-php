@@ -6,8 +6,5 @@ class BackdropImage extends Image
 {
     use HasIsoInformation;
 
-    public function getType(): string
-    {
-        return Image::FORMAT_BACKDROP;
-    }
+    protected static string $format = Image::FORMAT_BACKDROP;
 }

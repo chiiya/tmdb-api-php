@@ -19,12 +19,9 @@ use Psr\Http\Message\ResponseInterface;
  */
 class Gateway
 {
-    /** @var Client */
-    protected $client;
-    /** @var string */
-    protected $host;
-    /** @var string */
-    protected $token;
+    protected Client $client;
+    protected string $host;
+    protected string $token;
 
     /**
      * Gateway constructor.

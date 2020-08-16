@@ -4,33 +4,23 @@ namespace Chiiya\Tmdb\Models;
 
 class Review extends Entity
 {
-    /** @var string */
-    private $id;
-    /** @var string */
-    private $author;
-    /** @var string */
-    private $content;
-    /** @var string */
-    private $iso6391;
-    /** @var int */
-    private $mediaId;
-    /** @var string */
-    private $mediaTitle;
-    /** @var string */
-    private $mediaType;
-    /** @var string */
-    private $url;
+    private string $id;
+    private string $author;
+    private string $content;
+    private string $iso6391;
+    private int $mediaId;
+    private string $mediaTitle;
+    private string $mediaType;
+    private string $url;
 
     public function getId(): string
     {
         return $this->id;
     }
 
-    public function setId(string $id): Review
+    public function setId(string $id): void
     {
         $this->id = $id;
-
-        return $this;
     }
 
     public function getAuthor(): string
@@ -38,11 +28,9 @@ class Review extends Entity
         return $this->author;
     }
 
-    public function setAuthor(string $author): Review
+    public function setAuthor(string $author): void
     {
         $this->author = $author;
-
-        return $this;
     }
 
     public function getContent(): string
@@ -50,11 +38,9 @@ class Review extends Entity
         return $this->content;
     }
 
-    public function setContent(string $content): Review
+    public function setContent(string $content): void
     {
         $this->content = $content;
-
-        return $this;
     }
 
     public function getIso6391(): string
@@ -62,11 +48,9 @@ class Review extends Entity
         return $this->iso6391;
     }
 
-    public function setIso6391(string $iso6391): Review
+    public function setIso6391(string $iso6391): void
     {
         $this->iso6391 = $iso6391;
-
-        return $this;
     }
 
     public function getMediaId(): int
@@ -74,11 +58,9 @@ class Review extends Entity
         return $this->mediaId;
     }
 
-    public function setMediaId(int $mediaId): Review
+    public function setMediaId(int $mediaId): void
     {
         $this->mediaId = $mediaId;
-
-        return $this;
     }
 
     public function getMediaTitle(): string
@@ -86,11 +68,9 @@ class Review extends Entity
         return $this->mediaTitle;
     }
 
-    public function setMediaTitle(string $mediaTitle): Review
+    public function setMediaTitle(string $mediaTitle): void
     {
         $this->mediaTitle = $mediaTitle;
-
-        return $this;
     }
 
     public function getMediaType(): string
@@ -98,11 +78,9 @@ class Review extends Entity
         return $this->mediaType;
     }
 
-    public function setMediaType(string $mediaType): Review
+    public function setMediaType(string $mediaType): void
     {
         $this->mediaType = $mediaType;
-
-        return $this;
     }
 
     public function getUrl(): string
@@ -110,11 +88,9 @@ class Review extends Entity
         return $this->url;
     }
 
-    public function setUrl(string $url): Review
+    public function setUrl(string $url): void
     {
         $this->url = $url;
-
-        return $this;
     }
 
     /**

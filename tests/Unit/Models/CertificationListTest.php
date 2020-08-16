@@ -2,34 +2,33 @@
 
 namespace Chiiya\Tmdb\Tests\Unit\Models;
 
+use Chiiya\Tmdb\Models\Certification;
 use Chiiya\Tmdb\Models\CertificationList;
+use Chiiya\Tmdb\Tests\Fixtures\Attributes;
 use PHPUnit\Framework\TestCase;
 
 class CertificationListTest extends TestCase
 {
     public function test_getters_setters(): void
     {
-        $model = $this->getModel();
-        $this->assertEquals('US', $model->getCountry());
-        $this->assertEquals('G', $model->getCertifications()[0]->getCertification());
+        $attributes = $this->attributes();
+        $model = new CertificationList($attributes);
+        $this->assertEquals($attributes['country'], $model->getCountry());
+        $this->assertEquals($attributes['certifications'], $model->getCertifications());
     }
 
     public function test_to_array(): void
     {
-        $model = $this->getModel();
-        $this->assertEquals([
-            'country' => 'US',
-            'certifications' => [CertificationTest::getModel()],
-        ], $model->toArray());
+        $attributes = $this->attributes();
+        $model = new CertificationList($attributes);
+        $this->assertEquals($attributes, $model->toArray());
     }
 
-    public static function getModel(): CertificationList
+    protected function attributes(): array
     {
-        $model = new CertificationList();
-        $model
-            ->setCountry('US')
-            ->setCertifications([CertificationTest::getModel()]);
-
-        return $model;
+        return [
+            'country' => 'US',
+            'certifications' => [new Certification(Attributes::certificationAttributes())],
+        ];
     }
 }

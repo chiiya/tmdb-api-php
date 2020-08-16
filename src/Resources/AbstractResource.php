@@ -9,8 +9,7 @@ use JsonSerializable;
 
 abstract class AbstractResource
 {
-    /** @var Client */
-    protected $client;
+    protected Client $client;
 
     /**
      * AbstractResource constructor.

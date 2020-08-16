@@ -4,25 +4,20 @@ namespace Chiiya\Tmdb\Models;
 
 class Certification extends Entity
 {
-    /** @var string */
-    private $certification;
-    /** @var string */
-    private $meaning;
-    /** @var int */
-    private $order;
+    private string $certification;
+    private string $meaning;
+    private int $order;
 
-    public static $properties = ['certification', 'meaning', 'order'];
+    public static array $properties = ['certification', 'meaning', 'order'];
 
     public function getCertification(): string
     {
         return $this->certification;
     }
 
-    public function setCertification(string $certification): Certification
+    public function setCertification(string $certification): void
     {
         $this->certification = $certification;
-
-        return $this;
     }
 
     public function getMeaning(): string
@@ -30,11 +25,9 @@ class Certification extends Entity
         return $this->meaning;
     }
 
-    public function setMeaning(string $meaning): Certification
+    public function setMeaning(string $meaning): void
     {
         $this->meaning = $meaning;
-
-        return $this;
     }
 
     public function getOrder(): int
@@ -42,11 +35,9 @@ class Certification extends Entity
         return $this->order;
     }
 
-    public function setOrder(int $order): Certification
+    public function setOrder(int $order): void
     {
         $this->order = $order;
-
-        return $this;
     }
 
     /**

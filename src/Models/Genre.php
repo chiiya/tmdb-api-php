@@ -4,21 +4,17 @@ namespace Chiiya\Tmdb\Models;
 
 class Genre extends Entity
 {
-    /** @var int */
-    private $id;
-    /** @var string */
-    private $name;
+    private int $id;
+    private string $name;
 
     public function getId(): int
     {
         return $this->id;
     }
 
-    public function setId(int $id): Genre
+    public function setId(int $id): void
     {
         $this->id = $id;
-
-        return $this;
     }
 
     public function getName(): string
@@ -26,11 +22,9 @@ class Genre extends Entity
         return $this->name;
     }
 
-    public function setName(string $name): Genre
+    public function setName(string $name): void
     {
         $this->name = $name;
-
-        return $this;
     }
 
     /**

@@ -6,31 +6,27 @@ use Chiiya\Tmdb\Models\Entity;
 
 class ImageConfiguration extends Entity
 {
-    /** @var string */
-    private $baseUrl;
-    /** @var string */
-    private $secureBaseUrl;
+    private string $baseUrl;
+    private string $secureBaseUrl;
     /** @var string[] */
-    private $backdropSizes;
+    private array $backdropSizes;
     /** @var string[] */
-    private $logoSizes;
+    private array $logoSizes;
     /** @var string[] */
-    private $posterSizes;
+    private array $posterSizes;
     /** @var string[] */
-    private $profileSizes;
+    private array $profileSizes;
     /** @var string[] */
-    private $stillSizes;
+    private array $stillSizes;
 
     public function getBaseUrl(): string
     {
         return $this->baseUrl;
     }
 
-    public function setBaseUrl(string $baseUrl): ImageConfiguration
+    public function setBaseUrl(string $baseUrl): void
     {
         $this->baseUrl = $baseUrl;
-
-        return $this;
     }
 
     public function getSecureBaseUrl(): string
@@ -38,11 +34,9 @@ class ImageConfiguration extends Entity
         return $this->secureBaseUrl;
     }
 
-    public function setSecureBaseUrl(string $secureBaseUrl): ImageConfiguration
+    public function setSecureBaseUrl(string $secureBaseUrl): void
     {
         $this->secureBaseUrl = $secureBaseUrl;
-
-        return $this;
     }
 
     /**
@@ -56,11 +50,9 @@ class ImageConfiguration extends Entity
     /**
      * @param string[] $backdropSizes
      */
-    public function setBackdropSizes(array $backdropSizes): ImageConfiguration
+    public function setBackdropSizes(array $backdropSizes): void
     {
         $this->backdropSizes = $backdropSizes;
-
-        return $this;
     }
 
     /**
@@ -74,11 +66,9 @@ class ImageConfiguration extends Entity
     /**
      * @param string[] $logoSizes
      */
-    public function setLogoSizes(array $logoSizes): ImageConfiguration
+    public function setLogoSizes(array $logoSizes): void
     {
         $this->logoSizes = $logoSizes;
-
-        return $this;
     }
 
     /**
@@ -92,11 +82,9 @@ class ImageConfiguration extends Entity
     /**
      * @param string[] $posterSizes
      */
-    public function setPosterSizes(array $posterSizes): ImageConfiguration
+    public function setPosterSizes(array $posterSizes): void
     {
         $this->posterSizes = $posterSizes;
-
-        return $this;
     }
 
     /**
@@ -110,11 +98,9 @@ class ImageConfiguration extends Entity
     /**
      * @param string[] $profileSizes
      */
-    public function setProfileSizes(array $profileSizes): ImageConfiguration
+    public function setProfileSizes(array $profileSizes): void
     {
         $this->profileSizes = $profileSizes;
-
-        return $this;
     }
 
     /**
@@ -128,11 +114,9 @@ class ImageConfiguration extends Entity
     /**
      * @param string[] $stillSizes
      */
-    public function setStillSizes(array $stillSizes): ImageConfiguration
+    public function setStillSizes(array $stillSizes): void
     {
         $this->stillSizes = $stillSizes;
-
-        return $this;
     }
 
     /**

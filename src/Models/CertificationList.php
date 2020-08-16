@@ -4,8 +4,7 @@ namespace Chiiya\Tmdb\Models;
 
 class CertificationList extends Entity
 {
-    /** @var string */
-    private $country;
+    private string $country;
     /** @var Certification[] */
     private $certifications = [];
 
@@ -14,17 +13,15 @@ class CertificationList extends Entity
         return $this->country;
     }
 
-    public function setCountry(string $country): CertificationList
+    public function setCountry(string $country): void
     {
         $this->country = $country;
-
-        return $this;
     }
 
     /**
      * @return Certification[]
      */
-    public function getCertifications()
+    public function getCertifications(): array
     {
         return $this->certifications;
     }
@@ -32,11 +29,9 @@ class CertificationList extends Entity
     /**
      * @param Certification[] $certifications
      */
-    public function setCertifications($certifications): CertificationList
+    public function setCertifications(array $certifications): void
     {
         $this->certifications = $certifications;
-
-        return $this;
     }
 
     /**

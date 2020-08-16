@@ -4,26 +4,18 @@ namespace Chiiya\Tmdb\Models\Image;
 
 class LogoImage extends Image
 {
-    /** @var string */
-    private $id;
-    /** @var string */
-    private $fileType;
-
-    public function getType(): string
-    {
-        return Image::FORMAT_LOGO;
-    }
+    protected static string $format = Image::FORMAT_LOGO;
+    private string $id;
+    private string $fileType;
 
     public function getId(): string
     {
         return $this->id;
     }
 
-    public function setId(string $id): LogoImage
+    public function setId(string $id): void
     {
         $this->id = $id;
-
-        return $this;
     }
 
     public function getFileType(): string
@@ -31,11 +23,9 @@ class LogoImage extends Image
         return $this->fileType;
     }
 
-    public function setFileType(string $fileType): LogoImage
+    public function setFileType(string $fileType): void
     {
         $this->fileType = $fileType;
-
-        return $this;
     }
 
     public function isSVG(): bool

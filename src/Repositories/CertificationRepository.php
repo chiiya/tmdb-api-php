@@ -3,7 +3,6 @@
 namespace Chiiya\Tmdb\Repositories;
 
 use Chiiya\Tmdb\Factories\CertificationFactory;
-use Chiiya\Tmdb\Factories\FactoryInterface;
 use Chiiya\Tmdb\Models\CertificationList;
 use Chiiya\Tmdb\Resources\Certifications;
 
@@ -36,7 +35,7 @@ class CertificationRepository extends AbstractRepository
     /**
      * Return the model factory.
      */
-    protected function getFactory(): FactoryInterface
+    protected function getFactory(): CertificationFactory
     {
         return new CertificationFactory();
     }

@@ -6,21 +6,18 @@ use Chiiya\Tmdb\Models\Entity;
 
 class Timezone extends Entity
 {
-    /** @var string */
-    private $iso31661;
+    private string $iso31661;
     /** @var string[] */
-    private $zones;
+    private array $zones;
 
     public function getIso31661(): string
     {
         return $this->iso31661;
     }
 
-    public function setIso31661(string $iso31661): Timezone
+    public function setIso31661(string $iso31661): void
     {
         $this->iso31661 = $iso31661;
-
-        return $this;
     }
 
     /**
@@ -34,11 +31,9 @@ class Timezone extends Entity
     /**
      * @param string[] $zones
      */
-    public function setZones(array $zones): Timezone
+    public function setZones(array $zones): void
     {
         $this->zones = $zones;
-
-        return $this;
     }
 
     /**

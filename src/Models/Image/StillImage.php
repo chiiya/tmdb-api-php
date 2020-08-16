@@ -6,8 +6,5 @@ class StillImage extends Image
 {
     use HasIsoInformation;
 
-    public function getType(): string
-    {
-        return Image::FORMAT_STILL;
-    }
+    protected static string $format = Image::FORMAT_STILL;
 }

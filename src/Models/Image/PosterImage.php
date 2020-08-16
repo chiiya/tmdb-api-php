@@ -6,8 +6,5 @@ class PosterImage extends Image
 {
     use HasIsoInformation;
 
-    public function getType(): string
-    {
-        return Image::FORMAT_POSTER;
-    }
+    protected static string $format = Image::FORMAT_POSTER;
 }

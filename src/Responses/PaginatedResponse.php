@@ -4,12 +4,9 @@ namespace Chiiya\Tmdb\Responses;
 
 abstract class PaginatedResponse
 {
-    /** @var int */
-    protected $page;
-    /** @var int */
-    protected $totalPages;
-    /** @var int */
-    protected $totalResults;
+    protected int $page;
+    protected int $totalPages;
+    protected int $totalResults;
 
     public function getPage(): int
     {

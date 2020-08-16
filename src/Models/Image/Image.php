@@ -3,8 +3,11 @@
 namespace Chiiya\Tmdb\Models\Image;
 
 use Chiiya\Tmdb\Models\Entity;
+use Chiiya\Tmdb\Models\Media;
+use Chiiya\Tmdb\Models\Movie\Movie;
+use Chiiya\Tmdb\Models\Tv\TvShow;
 
-abstract class Image extends Entity
+class Image extends Entity
 {
     public const FORMAT_POSTER = 'poster';
     public const FORMAT_BACKDROP = 'backdrop';
@@ -20,32 +23,24 @@ abstract class Image extends Entity
         'stills' => self::FORMAT_STILL,
     ];
 
-    /** @var float */
-    protected $aspectRatio;
-    /** @var string */
-    protected $filePath;
-    /** @var int */
-    protected $height;
-    /** @var int */
-    protected $width;
-    /** @var int */
-    protected $voteCount;
-    /** @var float */
+    protected static string $format = 'image';
+    protected float $aspectRatio;
+    protected string $filePath;
+    protected int $height;
+    protected int $width;
+    protected int $voteCount;
+    /** @var int|float */
     protected $voteAverage;
+    protected ?Media $media;
 
     public function getAspectRatio(): float
     {
         return $this->aspectRatio;
     }
 
-    /**
-     * @return static
-     */
-    public function setAspectRatio(float $aspectRatio)
+    public function setAspectRatio(float $aspectRatio): void
     {
         $this->aspectRatio = $aspectRatio;
-
-        return $this;
     }
 
     public function getFilePath(): string
@@ -53,14 +48,9 @@ abstract class Image extends Entity
         return $this->filePath;
     }
 
-    /**
-     * @return static
-     */
-    public function setFilePath(string $filePath)
+    public function setFilePath(string $filePath): void
     {
         $this->filePath = $filePath;
-
-        return $this;
     }
 
     public function getHeight(): int
@@ -68,14 +58,9 @@ abstract class Image extends Entity
         return $this->height;
     }
 
-    /**
-     * @return static
-     */
-    public function setHeight(int $height)
+    public function setHeight(int $height): void
     {
         $this->height = $height;
-
-        return $this;
     }
 
     public function getWidth(): int
@@ -83,14 +68,9 @@ abstract class Image extends Entity
         return $this->width;
     }
 
-    /**
-     * @return static
-     */
-    public function setWidth(int $width)
+    public function setWidth(int $width): void
     {
         $this->width = $width;
-
-        return $this;
     }
 
     public function getVoteCount(): int
@@ -98,29 +78,45 @@ abstract class Image extends Entity
         return $this->voteCount;
     }
 
-    /**
-     * @return static
-     */
-    public function setVoteCount(int $voteCount)
+    public function setVoteCount(int $voteCount): void
     {
         $this->voteCount = $voteCount;
-
-        return $this;
     }
 
-    public function getVoteAverage(): float
+    /**
+     * @return float|int
+     */
+    public function getVoteAverage()
     {
         return $this->voteAverage;
     }
 
     /**
-     * @return static
+     * @param float|int $voteAverage
      */
-    public function setVoteAverage(float $voteAverage)
+    public function setVoteAverage($voteAverage): void
     {
         $this->voteAverage = $voteAverage;
+    }
 
-        return $this;
+    /**
+     * Available for certain endpoints, e.g. tagged images.
+     *
+     * @return Movie|TvShow|null
+     */
+    public function getMedia(): ?Media
+    {
+        return $this->media;
+    }
+
+    public function setMedia(Media $media): void
+    {
+        $this->media = $media;
+    }
+
+    public function getType(): string
+    {
+        return static::$format;
     }
 
     /**
@@ -142,6 +138,4 @@ abstract class Image extends Entity
     {
         return $this->getFilePath();
     }
-
-    abstract public function getType(): string;
 }

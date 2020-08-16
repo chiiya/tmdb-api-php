@@ -6,23 +6,18 @@ use Chiiya\Tmdb\Models\Entity;
 
 class Language extends Entity
 {
-    /** @var string */
-    private $iso6391;
-    /** @var string */
-    private $englishName;
-    /** @var string */
-    private $name;
+    private string $iso6391;
+    private string $englishName;
+    private string $name;
 
     public function getIso6391(): string
     {
         return $this->iso6391;
     }
 
-    public function setIso6391(string $iso6391): Language
+    public function setIso6391(string $iso6391): void
     {
         $this->iso6391 = $iso6391;
-
-        return $this;
     }
 
     public function getEnglishName(): string
@@ -30,11 +25,9 @@ class Language extends Entity
         return $this->englishName;
     }
 
-    public function setEnglishName(string $englishName): Language
+    public function setEnglishName(string $englishName): void
     {
         $this->englishName = $englishName;
-
-        return $this;
     }
 
     public function getName(): string
@@ -42,11 +35,9 @@ class Language extends Entity
         return $this->name;
     }
 
-    public function setName(string $name): Language
+    public function setName(string $name): void
     {
         $this->name = $name;
-
-        return $this;
     }
 
     /**

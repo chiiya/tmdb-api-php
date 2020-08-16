@@ -6,21 +6,18 @@ use Chiiya\Tmdb\Models\Entity;
 
 class Job extends Entity
 {
-    /** @var string */
-    private $department;
+    private string $department;
     /** @var string[] */
-    private $jobs;
+    private array $jobs;
 
     public function getDepartment(): string
     {
         return $this->department;
     }
 
-    public function setDepartment(string $department): Job
+    public function setDepartment(string $department): void
     {
         $this->department = $department;
-
-        return $this;
     }
 
     /**
@@ -34,11 +31,9 @@ class Job extends Entity
     /**
      * @param string[] $jobs
      */
-    public function setJobs(array $jobs): Job
+    public function setJobs(array $jobs): void
     {
         $this->jobs = $jobs;
-
-        return $this;
     }
 
     /**

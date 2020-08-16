@@ -6,8 +6,5 @@ class ProfileImage extends Image
 {
     use HasIsoInformation;
 
-    public function getType(): string
-    {
-        return Image::FORMAT_PROFILE;
-    }
+    protected static string $format = Image::FORMAT_PROFILE;
 }

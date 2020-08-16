@@ -4,8 +4,7 @@ namespace Chiiya\Tmdb\Query;
 
 class Language implements QueryParameterInterface
 {
-    /** @var string */
-    protected $language;
+    protected string $language;
 
     /**
      * Language constructor.

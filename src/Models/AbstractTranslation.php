@@ -4,25 +4,19 @@ namespace Chiiya\Tmdb\Models;
 
 abstract class AbstractTranslation extends Entity
 {
-    /** @var string */
-    private $iso31661;
-    /** @var string */
-    private $iso6391;
-    /** @var string */
-    private $name;
-    /** @var string */
-    private $englishName;
+    private string $iso31661;
+    private string $iso6391;
+    private string $name;
+    private string $englishName;
 
     public function getIso31661(): string
     {
         return $this->iso31661;
     }
 
-    public function setIso31661(string $iso31661): AbstractTranslation
+    public function setIso31661(string $iso31661): void
     {
         $this->iso31661 = $iso31661;
-
-        return $this;
     }
 
     public function getIso6391(): string
@@ -30,11 +24,9 @@ abstract class AbstractTranslation extends Entity
         return $this->iso6391;
     }
 
-    public function setIso6391(string $iso6391): AbstractTranslation
+    public function setIso6391(string $iso6391): void
     {
         $this->iso6391 = $iso6391;
-
-        return $this;
     }
 
     public function getName(): string
@@ -42,11 +34,9 @@ abstract class AbstractTranslation extends Entity
         return $this->name;
     }
 
-    public function setName(string $name): AbstractTranslation
+    public function setName(string $name): void
     {
         $this->name = $name;
-
-        return $this;
     }
 
     public function getEnglishName(): string
@@ -54,11 +44,9 @@ abstract class AbstractTranslation extends Entity
         return $this->englishName;
     }
 
-    public function setEnglishName(string $englishName): AbstractTranslation
+    public function setEnglishName(string $englishName): void
     {
         $this->englishName = $englishName;
-
-        return $this;
     }
 
     /**

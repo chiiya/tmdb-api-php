@@ -8,8 +8,7 @@ class AppendToResponse implements QueryParameterInterface
     public const TRANSLATIONS = 'translations';
     public const ALTERNATIVE_NAMES = 'alternative_names';
 
-    /** @var array */
-    protected $appends;
+    protected array $appends;
 
     /**
      * AppendToResponse constructor.

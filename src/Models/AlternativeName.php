@@ -4,21 +4,17 @@ namespace Chiiya\Tmdb\Models;
 
 class AlternativeName extends Entity
 {
-    /** @var string */
-    private $name;
-    /** @var string */
-    private $type;
+    private string $name;
+    private string $type;
 
     public function getName(): string
     {
         return $this->name;
     }
 
-    public function setName(string $name): AlternativeName
+    public function setName(string $name): void
     {
         $this->name = $name;
-
-        return $this;
     }
 
     public function getType(): string
@@ -26,11 +22,9 @@ class AlternativeName extends Entity
         return $this->type;
     }
 
-    public function setType(string $type): AlternativeName
+    public function setType(string $type): void
     {
         $this->type = $type;
-
-        return $this;
     }
 
     /**
