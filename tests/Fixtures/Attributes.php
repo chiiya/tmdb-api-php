@@ -131,4 +131,19 @@ class Attributes
             'data' => new TranslationData(self::personTranslationDataAttributes()),
         ];
     }
+
+    public static function changeItemAttributes(): array
+    {
+        return [
+            'id' => '5f41714fe8999b00354bb3ba',
+            'action' => 'deleted',
+            'time' => '2020-08-22 19:26:07 UTC',
+            'value' => null,
+            'original_value' => [
+                'profile' => [
+                    'file_path' => '/kcZJAEj9IjUloJVoM41DPDKMn8W.jpg',
+                ],
+            ],
+        ];
+    }
 }

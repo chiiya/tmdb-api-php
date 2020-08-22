@@ -105,7 +105,7 @@ class Collection extends Entity
      */
     public function getImages(): array
     {
-        return ($this->getBackdrops() ?? []) + ($this->getPosters() ?? []);
+        return array_merge($this->getBackdrops() ?? [], $this->getPosters() ?? []);
     }
 
     /**

@@ -3,6 +3,8 @@
 namespace Chiiya\Tmdb\Tests\Unit\Models;
 
 use Chiiya\Tmdb\Models\Change;
+use Chiiya\Tmdb\Models\ChangeItem;
+use Chiiya\Tmdb\Tests\Fixtures\Attributes;
 use PHPUnit\Framework\TestCase;
 
 class ChangeTest extends TestCase
@@ -11,8 +13,8 @@ class ChangeTest extends TestCase
     {
         $attributes = $this->attributes();
         $model = new Change($attributes);
-        $this->assertEquals($attributes['id'], $model->getId());
-        $this->assertEquals($attributes['adult'], $model->getAdult());
+        $this->assertEquals($attributes['key'], $model->getKey());
+        $this->assertEquals($attributes['items'], $model->getItems());
     }
 
     public function test_to_array(): void
@@ -25,8 +27,8 @@ class ChangeTest extends TestCase
     protected function attributes(): array
     {
         return [
-            'id' => 10,
-            'adult' => false,
+            'key' => 'images',
+            'items' => [new ChangeItem(Attributes::changeItemAttributes())],
         ];
     }
 }

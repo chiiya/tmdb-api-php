@@ -2,15 +2,15 @@
 
 namespace Chiiya\Tmdb\Responses;
 
-use Chiiya\Tmdb\Models\Change;
+use Chiiya\Tmdb\Models\ChangedEntity;
 
 class ChangesResponse extends PaginatedResponse
 {
-    /** @var Change[] */
+    /** @var ChangedEntity[] */
     private $results = [];
 
     /**
-     * @return Change[]
+     * @return ChangedEntity[]
      */
     public function getResults(): array
     {
@@ -18,7 +18,7 @@ class ChangesResponse extends PaginatedResponse
     }
 
     /**
-     * @param Change[] $results
+     * @param ChangedEntity[] $results
      */
     public function setResults(array $results): ChangesResponse
     {
@@ -30,7 +30,7 @@ class ChangesResponse extends PaginatedResponse
         return $this;
     }
 
-    public function addResult(Change $result): ChangesResponse
+    public function addResult(ChangedEntity $result): ChangesResponse
     {
         $this->results[] = $result;
 

@@ -22,6 +22,17 @@ class PersonRepositoryTest extends ApiTestCase
         $this->repository = new PersonRepository($this->client);
     }
 
+    public function test_changes(): void
+    {
+        $this->guzzler->expects($this->once())
+            ->endpoint($this->url('person/2751611/changes'), 'GET')
+            ->will(new Response(200, [], $this->getMockResponse('people/changes-images')));
+        $response = $this->repository->getChanges(2751611);
+        $this->assertEquals('images', $response[0]->getKey());
+        $this->assertEquals('deleted', $response[0]->getItems()[0]->getAction());
+        $this->assertEquals('/kcZJAEj9IjUloJVoM41DPDKMn8W.jpg', $response[0]->getItems()[0]->getOriginalValue()['profile']['file_path']);
+    }
+
     public function test_movie_credits(): void
     {
         $this->guzzler->expects($this->once())

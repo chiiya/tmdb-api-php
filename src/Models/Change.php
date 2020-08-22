@@ -4,27 +4,42 @@ namespace Chiiya\Tmdb\Models;
 
 class Change extends Entity
 {
-    private int $id;
-    private ?bool $adult;
+    protected string $key;
+    /** @var ChangeItem[] */
+    protected $items = [];
 
-    public function getId(): int
+    public function getKey(): string
     {
-        return $this->id;
+        return $this->key;
     }
 
-    public function setId(int $id): void
+    public function setKey(string $key): void
     {
-        $this->id = $id;
+        $this->key = $key;
     }
 
-    public function getAdult(): ?bool
+    /**
+     * @return ChangeItem[]
+     */
+    public function getItems(): array
     {
-        return $this->adult;
+        return $this->items;
     }
 
-    public function setAdult(?bool $adult): void
+    /**
+     * @param ChangeItem[] $items
+     */
+    public function setItems(array $items): void
     {
-        $this->adult = $adult;
+        $this->items = [];
+        foreach ($items as $item) {
+            $this->addItem($item);
+        }
+    }
+
+    public function addItem(ChangeItem $item): void
+    {
+        $this->items[] = $item;
     }
 
     /**
@@ -33,8 +48,8 @@ class Change extends Entity
     public function toArray(): array
     {
         return [
-            'id' => $this->getId(),
-            'adult' => $this->getAdult(),
+            'key' => $this->getKey(),
+            'items' => $this->getItems(),
         ];
     }
 }

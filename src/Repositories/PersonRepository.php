@@ -3,6 +3,7 @@
 namespace Chiiya\Tmdb\Repositories;
 
 use Chiiya\Tmdb\Common\ResponseHelper;
+use Chiiya\Tmdb\Models\Change;
 use Chiiya\Tmdb\Models\Image\ProfileImage;
 use Chiiya\Tmdb\Models\Person\ExternalIds;
 use Chiiya\Tmdb\Models\Person\Translation;
@@ -14,6 +15,26 @@ use Symfony\Component\Serializer\Exception\ExceptionInterface;
 
 class PersonRepository extends AbstractRepository
 {
+    /**
+     * Get the changes for a person. By default only the last 24 hours are returned.
+     *
+     * You can query up to 14 days in a single query by using the start_date and end_date query parameters.
+     *
+     * @see https://developers.themoviedb.org/3/people/get-person-changes
+     *
+     * @param int|string $id
+     *
+     * @throws ExceptionInterface
+     *
+     * @return Change[]
+     */
+    public function getChanges($id, array $parameters = []): array
+    {
+        $response = $this->getResource()->getChanges($id, $parameters)['changes'] ?? [];
+
+        return $this->serializer->denormalize($response, 'Chiiya\Tmdb\Models\Change[]');
+    }
+
     /**
      * Get the movie credits for a person.
      *
