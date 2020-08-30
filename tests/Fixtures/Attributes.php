@@ -48,6 +48,26 @@ class Attributes
         ];
     }
 
+    public static function personAttributes(): array
+    {
+        return [
+            'id' => 287,
+            'birthday' => new \DateTime('1963-12-18'),
+            'deathday' => null,
+            'known_for_department' => 'Acting',
+            'name' => 'Brad Pitt',
+            'also_known_as' => ['William Bradley Pitt'],
+            'gender' => 2,
+            'biography' => 'Lorem Ipsum Dolor sit amet',
+            'popularity' => 35.542,
+            'place_of_birth' => 'Shawnee, Oklahoma, USA',
+            'profile_path' => '/cckcYc2v0yh1tc9QjRelptcOBko.jpg',
+            'adult' => false,
+            'imdb_id' => 'nm0000093',
+            'homepage' => null,
+        ];
+    }
+
     public static function imageAttributes(): array
     {
         return [

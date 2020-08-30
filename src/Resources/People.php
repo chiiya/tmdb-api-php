@@ -5,6 +5,18 @@ namespace Chiiya\Tmdb\Resources;
 class People extends AbstractResource
 {
     /**
+     * Get the primary person details by id.
+     *
+     * @see https://developers.themoviedb.org/3/people/get-person-details
+     *
+     * @param int|string $id
+     */
+    public function getPerson($id, array $parameters = []): array
+    {
+        return $this->get('person/'.$id, $parameters);
+    }
+
+    /**
      * Get the changes for a person. By default only the last 24 hours are returned.
      *
      * You can query up to 14 days in a single query by using the start_date and end_date query parameters.

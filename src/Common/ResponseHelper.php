@@ -8,25 +8,19 @@ class ResponseHelper
 {
     public static function flatten(array $response): array
     {
-        return self::flattenImages(self::flattenTranslations(self::flattenAlternativeNames($response)));
-    }
+        if (isset($response['changes'], $response['changes']['changes'])) {
+            $response['changes'] = $response['changes']['changes'];
+        }
 
-    public static function flattenTranslations(array $response): array
-    {
         if (isset($response['translations'], $response['translations']['translations'])) {
             $response['translations'] = $response['translations']['translations'];
         }
 
-        return $response;
-    }
-
-    public static function flattenAlternativeNames(array $response): array
-    {
         if (isset($response['alternative_names'], $response['alternative_names']['results'])) {
             $response['alternative_names'] = $response['alternative_names']['results'];
         }
 
-        return $response;
+        return self::flattenImages($response);
     }
 
     public static function flattenImages(array $response): array

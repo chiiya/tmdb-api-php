@@ -6,6 +6,7 @@ use Chiiya\Tmdb\Common\ResponseHelper;
 use Chiiya\Tmdb\Models\Change;
 use Chiiya\Tmdb\Models\Image\ProfileImage;
 use Chiiya\Tmdb\Models\Person\ExternalIds;
+use Chiiya\Tmdb\Models\Person\PersonDetails;
 use Chiiya\Tmdb\Models\Person\Translation;
 use Chiiya\Tmdb\Responses\CombinedCreditsResponse;
 use Chiiya\Tmdb\Responses\MovieCreditsResponse;
@@ -15,6 +16,22 @@ use Symfony\Component\Serializer\Exception\ExceptionInterface;
 
 class PersonRepository extends AbstractRepository
 {
+    /**
+     * Get the primary person details by id.
+     *
+     * @see https://developers.themoviedb.org/3/people/get-person-details
+     *
+     * @param int|string $id
+     *
+     * @throws ExceptionInterface
+     */
+    public function getPerson($id, array $parameters = []): PersonDetails
+    {
+        $response = ResponseHelper::normalizeDiscriminators(ResponseHelper::flatten($this->getResource()->getPerson($id, $parameters)));
+
+        return $this->serializer->denormalize($response, PersonDetails::class);
+    }
+
     /**
      * Get the changes for a person. By default only the last 24 hours are returned.
      *

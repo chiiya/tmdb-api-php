@@ -7,6 +7,7 @@ use Chiiya\Tmdb\Models\Person\MovieCastMember;
 use Chiiya\Tmdb\Models\Person\MovieCrewMember;
 use Chiiya\Tmdb\Models\Person\TvCastMember;
 use Chiiya\Tmdb\Models\Person\TvCrewMember;
+use Chiiya\Tmdb\Query\AppendToResponse;
 use Chiiya\Tmdb\Repositories\PersonRepository;
 use Chiiya\Tmdb\Tests\ApiTestCase;
 use GuzzleHttp\Psr7\Response;
@@ -20,6 +21,42 @@ class PersonRepositoryTest extends ApiTestCase
     {
         parent::setUp();
         $this->repository = new PersonRepository($this->client);
+    }
+
+    public function test_details(): void
+    {
+        $this->guzzler->expects($this->once())
+            ->endpoint($this->url('person/287'), 'GET')
+            ->will(new Response(200, [], $this->getMockResponse('people/details')));
+        $response = $this->repository->getPerson(287);
+        $this->assertEquals('Brad Pitt', $response->getName());
+        $this->assertEquals('1963-12-18', $response->getBirthday()->format('Y-m-d'));
+        $this->assertEquals(true, $response->isMale());
+    }
+
+    public function test_details_with_appends(): void
+    {
+        $this->guzzler->expects($this->once())
+            ->endpoint($this->url('person/287?append_to_response=movie_credits,tv_credits,combined_credits,external_ids,tagged_images,images,changes,translations'), 'GET')
+            ->will(new Response(200, [], $this->getMockResponse('people/appends')));
+        $response = $this->repository->getPerson(287, [new AppendToResponse([
+            AppendToResponse::MOVIE_CREDITS,
+            AppendToResponse::TV_CREDITS,
+            AppendToResponse::COMBINED_CREDITS,
+            AppendToResponse::EXTERNAL_IDS,
+            AppendToResponse::TAGGED_IMAGES,
+            AppendToResponse::IMAGES,
+            AppendToResponse::CHANGES,
+            AppendToResponse::TRANSLATIONS,
+        ])]);
+        $this->assertEquals('Ocean\'s Twelve', $response->getMovieCredits()->getCast()[0]->getTitle());
+        $this->assertEquals('Ocean\'s Twelve', $response->getCombinedCredits()->getCast()[0]->getTitle());
+        $this->assertEquals('Growing Pains', $response->getTvCredits()->getCast()[0]->getName());
+        $this->assertEquals('nm0000093', $response->getExternalIds()->getImdbId());
+        $this->assertEquals(2400, $response->getImages()[0]->getHeight());
+        $this->assertEquals(2400, $response->getProfiles()[0]->getHeight());
+        $this->assertEquals('BG', $response->getTranslations()[0]->getIso31661());
+        $this->assertEquals('/kcZJAEj9IjUloJVoM41DPDKMn8W.jpg', $response->getChanges()[0]->getItems()[0]->getOriginalValue()['profile']['file_path']);
     }
 
     public function test_changes(): void
