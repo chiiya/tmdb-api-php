@@ -6,6 +6,7 @@ use Chiiya\Tmdb\Common\ResponseHelper;
 use Chiiya\Tmdb\Models\Change;
 use Chiiya\Tmdb\Models\Image\ProfileImage;
 use Chiiya\Tmdb\Models\Person\ExternalIds;
+use Chiiya\Tmdb\Models\Person\Person;
 use Chiiya\Tmdb\Models\Person\PersonDetails;
 use Chiiya\Tmdb\Models\Person\Translation;
 use Chiiya\Tmdb\Responses\CombinedCreditsResponse;
@@ -167,6 +168,20 @@ class PersonRepository extends AbstractRepository
         $response = $this->getResource()->getTranslations($id, $parameters)['translations'];
 
         return $this->serializer->denormalize($response, 'Chiiya\Tmdb\Models\Person\Translation[]');
+    }
+
+    /**
+     * Get the most newly created person. This is a live response and will continuously change.
+     *
+     * @see https://developers.themoviedb.org/3/people/get-latest-person
+     *
+     * @throws ExceptionInterface
+     */
+    public function getLatest(array $parameters = []): Person
+    {
+        $response = $this->getResource()->getLatest();
+
+        return $this->serializer->denormalize($response, Person::class);
     }
 
     /**

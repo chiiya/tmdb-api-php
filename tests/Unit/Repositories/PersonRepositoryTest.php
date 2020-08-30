@@ -143,4 +143,13 @@ class PersonRepositoryTest extends ApiTestCase
         $translations = $this->repository->getTranslations(287);
         $this->assertStringStartsWith('William Bradley', $translations[2]->getData()->getBiography());
     }
+
+    public function test_person_latest(): void
+    {
+        $this->guzzler->expects($this->once())
+            ->endpoint($this->url('person/latest'), 'GET')
+            ->will(new Response(200, [], $this->getMockResponse('people/latest')));
+        $person = $this->repository->getLatest();
+        $this->assertStringStartsWith('Lelia Sakai', $person->getName());
+    }
 }

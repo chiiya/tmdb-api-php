@@ -20,7 +20,7 @@ class Person extends Entity
     private ?string $placeOfBirth;
     private ?string $profilePath;
     private bool $adult;
-    private string $imdbId;
+    private ?string $imdbId;
     private ?string $homepage;
 
     public function getId(): int
@@ -149,12 +149,12 @@ class Person extends Entity
         $this->adult = $adult;
     }
 
-    public function getImdbId(): string
+    public function getImdbId(): ?string
     {
         return $this->imdbId;
     }
 
-    public function setImdbId(string $imdbId): void
+    public function setImdbId(?string $imdbId): void
     {
         $this->imdbId = $imdbId;
     }

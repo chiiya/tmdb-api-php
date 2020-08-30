@@ -114,4 +114,14 @@ class People extends AbstractResource
     {
         return $this->get('person/'.$id.'/translations', $parameters);
     }
+
+    /**
+     * Get the most newly created person. This is a live response and will continuously change.
+     *
+     * @see https://developers.themoviedb.org/3/people/get-latest-person
+     */
+    public function getLatest(array $parameters = []): array
+    {
+        return $this->get('person/latest', $parameters);
+    }
 }
