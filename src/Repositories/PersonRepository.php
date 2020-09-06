@@ -11,6 +11,7 @@ use Chiiya\Tmdb\Models\Person\PersonDetails;
 use Chiiya\Tmdb\Models\Person\Translation;
 use Chiiya\Tmdb\Responses\CombinedCreditsResponse;
 use Chiiya\Tmdb\Responses\MovieCreditsResponse;
+use Chiiya\Tmdb\Responses\PopularPeopleResponse;
 use Chiiya\Tmdb\Responses\TaggedImagesResponse;
 use Chiiya\Tmdb\Responses\TvCreditsResponse;
 use Symfony\Component\Serializer\Exception\ExceptionInterface;
@@ -179,9 +180,23 @@ class PersonRepository extends AbstractRepository
      */
     public function getLatest(array $parameters = []): Person
     {
-        $response = $this->getResource()->getLatest();
+        $response = $this->getResource()->getLatest($parameters);
 
         return $this->serializer->denormalize($response, Person::class);
+    }
+
+    /**
+     * Get the list of popular people on TMDb. This list updates daily.
+     *
+     * @see https://developers.themoviedb.org/3/people/get-popular-people
+     *
+     * @throws ExceptionInterface
+     */
+    public function getPopular(array $parameters = []): PopularPeopleResponse
+    {
+        $response = $this->getResource()->getPopular($parameters);
+
+        return $this->serializer->denormalize($response, PopularPeopleResponse::class);
     }
 
     /**

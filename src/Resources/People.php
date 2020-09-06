@@ -124,4 +124,14 @@ class People extends AbstractResource
     {
         return $this->get('person/latest', $parameters);
     }
+
+    /**
+     * Get the list of popular people on TMDb. This list updates daily.
+     *
+     * @see https://developers.themoviedb.org/3/people/get-popular-people
+     */
+    public function getPopular(array $parameters = []): array
+    {
+        return $this->get('person/popular', $parameters);
+    }
 }

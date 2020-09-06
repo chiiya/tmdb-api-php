@@ -13,11 +13,9 @@ abstract class PaginatedResponse
         return $this->page;
     }
 
-    public function setPage(int $page): PaginatedResponse
+    public function setPage(int $page): void
     {
         $this->page = $page;
-
-        return $this;
     }
 
     public function getTotalPages(): int
@@ -25,11 +23,9 @@ abstract class PaginatedResponse
         return $this->totalPages;
     }
 
-    public function setTotalPages(int $totalPages): PaginatedResponse
+    public function setTotalPages(int $totalPages): void
     {
         $this->totalPages = $totalPages;
-
-        return $this;
     }
 
     public function getTotalResults(): int
@@ -37,10 +33,8 @@ abstract class PaginatedResponse
         return $this->totalResults;
     }
 
-    public function setTotalResults(int $totalResults): PaginatedResponse
+    public function setTotalResults(int $totalResults): void
     {
         $this->totalResults = $totalResults;
-
-        return $this;
     }
 }

@@ -7,6 +7,12 @@ use Symfony\Component\String\Inflector\InflectorInterface;
 
 class EnglishInflector implements InflectorInterface
 {
+    protected $singulars = [
+        'cast' => 'castMember',
+        'crew' => 'crewMember',
+        'knownFor' => 'knownForEntry',
+    ];
+
     protected BaseInflector $inflector;
 
     public function __construct()
@@ -19,8 +25,8 @@ class EnglishInflector implements InflectorInterface
      */
     public function singularize(string $plural): array
     {
-        if (strtolower($plural) === 'cast' || strtolower($plural) === 'crew') {
-            return [$plural.'Member'];
+        if (in_array(lcfirst($plural), array_keys($this->singulars))) {
+            return [$this->singulars[lcfirst($plural)]];
         }
 
         return $this->inflector->singularize($plural);

@@ -23,21 +23,17 @@ class CollectionImagesResponse
     /**
      * @param BackdropImage[] $backdrops
      */
-    public function setBackdrops(array $backdrops): CollectionImagesResponse
+    public function setBackdrops(array $backdrops): void
     {
         $this->backdrops = [];
         foreach ($backdrops as $backdrop) {
             $this->addBackdrop($backdrop);
         }
-
-        return $this;
     }
 
-    public function addBackdrop(BackdropImage $image): CollectionImagesResponse
+    public function addBackdrop(BackdropImage $image): void
     {
         $this->backdrops[] = $image;
-
-        return $this;
     }
 
     /**
@@ -51,20 +47,16 @@ class CollectionImagesResponse
     /**
      * @param PosterImage[] $posters
      */
-    public function setPosters(array $posters): CollectionImagesResponse
+    public function setPosters(array $posters): void
     {
         $this->posters = [];
         foreach ($posters as $poster) {
             $this->addPoster($poster);
         }
-
-        return $this;
     }
 
-    public function addPoster(PosterImage $image): CollectionImagesResponse
+    public function addPoster(PosterImage $image): void
     {
         $this->posters[] = $image;
-
-        return $this;
     }
 }

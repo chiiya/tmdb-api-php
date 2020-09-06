@@ -152,4 +152,16 @@ class PersonRepositoryTest extends ApiTestCase
         $person = $this->repository->getLatest();
         $this->assertStringStartsWith('Lelia Sakai', $person->getName());
     }
+
+    public function test_person_popular(): void
+    {
+        $this->guzzler->expects($this->once())
+            ->endpoint($this->url('person/popular'), 'GET')
+            ->will(new Response(200, [], $this->getMockResponse('people/popular')));
+        $response = $this->repository->getPopular();
+        $this->assertEquals(500, $response->getTotalPages());
+        $this->assertEquals('Keanu Reeves', $response->getResults()[0]->getName());
+        $this->assertEquals('The Matrix', $response->getResults()[0]->getKnownFor()[0]->getTitle());
+        $this->assertEquals('American Vandal', $response->getResults()[2]->getKnownFor()[2]->getName());
+    }
 }
