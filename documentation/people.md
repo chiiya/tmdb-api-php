@@ -19,6 +19,8 @@ $response = $client->people()->getPerson(287);
 $response['name']; // -> "Brad Pitt"
 ```
 
+----------
+
 ### Eager Loading
 **Repository**
 ```php
@@ -76,6 +78,8 @@ $response['changes']['changes'][0]['items'][0]['original_value']['profile']['fil
 $response['translations']['translations'][0]['iso_3166_1']; // -> "BG"
 ```
 
+----------
+
 ### Get Changes
 **Repository**
 ```php
@@ -97,6 +101,8 @@ $response['changes'][0]['key']; // -> "name"
 $response['changes'][0]['items'][0]['value']; // -> "name"
 ```
 
+----------
+
 ### Get Movie Credits
 **Repository**
 ```php
@@ -115,6 +121,8 @@ $client = new Client('token');
 $response = $client->people()->getMovieCredits(287);
 $response['cast'][0]['title']; // -> "Ocean's Twelve"
 ```
+
+----------
 
 ### Get TV Credits
 **Repository**
@@ -135,6 +143,8 @@ $response = $client->people()->getTvCredits(287);
 $response['cast'][0]['name']; // -> "Growing Pains"
 ```
 
+----------
+
 ### Get Combined Credits
 **Repository**
 ```php
@@ -153,6 +163,8 @@ $client = new Client('token');
 $response = $client->people()->getCombinedCredits(287);
 $response['cast'][0]['title']; // -> "Ocean's Twelve"
 ```
+
+----------
 
 ### Get External IDs
 **Repository**
@@ -173,6 +185,8 @@ $response = $client->people()->getExternalIds(287);
 $response['imdb_id']; // -> "nm0000093"
 ```
 
+----------
+
 ### Get Images
 **Repository**
 ```php
@@ -191,6 +205,8 @@ $client = new Client('token');
 $response = $client->people()->getImages(287);
 $response['profiles'][0]['width']; // -> 1600
 ```
+
+----------
 
 ### Get Tagged Images
 **Repository**
@@ -213,6 +229,8 @@ $response['results'][0]['height']; // -> 2100
 $response['results'][0]['media']['original_title']; // -> "A Beautiful Day in the Neighborhood"
 ```
 
+----------
+
 ### Get Translations
 **Repository**
 ```php
@@ -234,6 +252,8 @@ $response['translations'][2]['name']; // -> "Deutsch"
 $response['translations'][2]['data']['biography']; // -> "..."
 ```
 
+----------
+
 ### Get Latest
 **Repository**
 ```php
@@ -252,6 +272,8 @@ $client = new Client('token');
 $response = $client->people()->getLatest();
 $response['name']; // -> "Lelia Sakai"
 ```
+
+----------
 
 ### Get Popular
 **Repository**
