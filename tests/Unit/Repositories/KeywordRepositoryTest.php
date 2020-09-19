@@ -22,8 +22,18 @@ class KeywordRepositoryTest extends ApiTestCase
         $this->guzzler->expects($this->once())
             ->endpoint($this->url('keyword/378'), 'GET')
             ->will(new Response(200, [], $this->getMockResponse('keywords/details')));
-        $response = $this->repository->getDetails(378);
+        $response = $this->repository->getKeyword(378);
         $this->assertEquals(378, $response->getId());
         $this->assertEquals('prison', $response->getName());
+    }
+
+    public function test_movies()
+    {
+        $this->guzzler->expects($this->once())
+            ->endpoint($this->url('keyword/378/movies'), 'GET')
+            ->will(new Response(200, [], $this->getMockResponse('keywords/movies')));
+        $response = $this->repository->getMovies(378);
+        $this->assertEquals('Escape Plan 2: Hades', $response->getResults()[0]->getTitle());
+        $this->assertEquals(833, $response->getTotalResults());
     }
 }

@@ -17,7 +17,7 @@ abstract class CreditsResponse
     protected $crew = [];
 
     /**
-     * @return MovieCastMember|TvCastMember[]
+     * @return MovieCastMember[]|TvCastMember[]
      */
     public function getCast(): array
     {
@@ -36,7 +36,7 @@ abstract class CreditsResponse
     }
 
     /**
-     * @return MovieCrewMember|TvCrewMember[]
+     * @return MovieCrewMember[]|TvCrewMember[]
      */
     public function getCrew(): array
     {
