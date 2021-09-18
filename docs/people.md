@@ -1,4 +1,4 @@
-## People
+Examples for using people API resources. [See documentation on TMDB](https://developers.themoviedb.org/3/people/get-person-details).
 
 ### Get Details
 ```php

@@ -1,0 +1,10 @@
+:root > * {
+  --md-code-hl-comment-color: #999;
+  --md-code-hl-variable-color: #c2185b;
+  --md-code-hl-keyword-color: #3b78e7;
+  --md-code-hl-punctuation-color: #37474f;
+}
+
+.highlight .nv {
+  color: #3e61a2;
+}

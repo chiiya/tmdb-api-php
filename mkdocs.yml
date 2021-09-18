@@ -1,0 +1,17 @@
+site_name: TMDB API PHP
+theme:
+  name: material
+  palette:
+    primary: teal
+markdown_extensions:
+  - pymdownx.highlight:
+      guess_lang: false
+      extend_pygments_lang:
+        - name: php
+          lang: php
+          options:
+            startinline: true
+  - pymdownx.inlinehilite:
+  - pymdownx.superfences:
+extra_css:
+  - stylesheets/extra.css
