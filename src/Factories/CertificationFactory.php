@@ -2,21 +2,23 @@
 
 namespace Chiiya\Tmdb\Factories;
 
-use Chiiya\Tmdb\Models\Certification;
 use Chiiya\Tmdb\Models\CertificationList;
+use Symfony\Component\Serializer\Exception\ExceptionInterface;
+use Symfony\Component\Serializer\Serializer;
 
-class CertificationFactory extends AbstractFactory
+class CertificationFactory
 {
-    /**
-     * {@inheritdoc}
-     */
-    public function create(array $data = [])
+    private Serializer $serializer;
+
+    public function __construct(Serializer $serializer)
     {
-        return $this->hydrate(new Certification(), $data);
+        $this->serializer = $serializer;
     }
 
     /**
-     * {@inheritdoc}
+     * Convert an array with a collection of items to a hydrated object collection.
+     *
+     * @throws ExceptionInterface
      */
     public function createCollection(array $data = []): array
     {
@@ -27,13 +29,7 @@ class CertificationFactory extends AbstractFactory
         foreach ($data as $country => $certifications) {
             $item = new CertificationList();
             $item->setCountry($country);
-            $list = [];
-
-            foreach ($certifications as $certification) {
-                $list[] = $this->create($certification);
-            }
-
-            $item->setCertifications($list);
+            $item->setCertifications($this->serializer->denormalize($certifications, 'Chiiya\Tmdb\Models\Certification[]'));
             $items[] = $item;
         }
 

@@ -29,8 +29,7 @@ class Image extends Entity
     protected int $height;
     protected int $width;
     protected int $voteCount;
-    /** @var int|float */
-    protected $voteAverage;
+    protected int|float $voteAverage;
     protected ?Media $media;
 
     public function getAspectRatio(): float
@@ -83,18 +82,12 @@ class Image extends Entity
         $this->voteCount = $voteCount;
     }
 
-    /**
-     * @return float|int
-     */
-    public function getVoteAverage()
+    public function getVoteAverage(): float|int
     {
         return $this->voteAverage;
     }
 
-    /**
-     * @param float|int $voteAverage
-     */
-    public function setVoteAverage($voteAverage): void
+    public function setVoteAverage(float|int $voteAverage): void
     {
         $this->voteAverage = $voteAverage;
     }
@@ -117,21 +110,6 @@ class Image extends Entity
     public function getType(): string
     {
         return static::$format;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function toArray(): array
-    {
-        return [
-            'aspect_ratio' => $this->getAspectRatio(),
-            'file_path' => $this->getFilePath(),
-            'height' => $this->getHeight(),
-            'width' => $this->getWidth(),
-            'vote_count' => $this->getVoteCount(),
-            'vote_average' => $this->getVoteAverage(),
-        ];
     }
 
     public function __toString(): string

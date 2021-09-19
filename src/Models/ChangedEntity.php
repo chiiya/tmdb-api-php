@@ -26,15 +26,4 @@ class ChangedEntity extends Entity
     {
         $this->adult = $adult;
     }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function toArray(): array
-    {
-        return [
-            'id' => $this->getId(),
-            'adult' => $this->getAdult(),
-        ];
-    }
 }

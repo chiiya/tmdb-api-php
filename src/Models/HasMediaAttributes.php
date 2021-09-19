@@ -11,10 +11,8 @@ trait HasMediaAttributes
     private string $originalLanguage;
     private string $overview;
     private int $voteCount;
-    /** @var float|int */
-    private $voteAverage;
-    /** @var float|int */
-    private $popularity;
+    private int|float $voteAverage;
+    private int|float $popularity;
 
     public function getId(): int
     {
@@ -86,50 +84,23 @@ trait HasMediaAttributes
         $this->voteCount = $voteCount;
     }
 
-    /**
-     * @return float|int
-     */
-    public function getVoteAverage()
+    public function getVoteAverage(): float|int
     {
         return $this->voteAverage;
     }
 
-    /**
-     * @param float|int $voteAverage
-     */
-    public function setVoteAverage($voteAverage): void
+    public function setVoteAverage(float|int $voteAverage): void
     {
         $this->voteAverage = $voteAverage;
     }
 
-    /**
-     * @return float|int
-     */
-    public function getPopularity()
+    public function getPopularity(): float|int
     {
         return $this->popularity;
     }
 
-    /**
-     * @param float|int $popularity
-     */
-    public function setPopularity($popularity): void
+    public function setPopularity(float|int $popularity): void
     {
         $this->popularity = $popularity;
-    }
-
-    protected function getBaseMediaAttributes(): array
-    {
-        return [
-            'id' => $this->getId(),
-            'backdrop_path' => $this->getBackdropPath(),
-            'poster_path' => $this->getPosterPath(),
-            'genre_ids' => $this->getGenreIds(),
-            'original_language' => $this->getOriginalLanguage(),
-            'overview' => $this->getOverview(),
-            'vote_count' => $this->getVoteCount(),
-            'vote_average' => $this->getVoteAverage(),
-            'popularity' => $this->getPopularity(),
-        ];
     }
 }

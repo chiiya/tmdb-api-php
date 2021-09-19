@@ -59,17 +59,4 @@ trait HasMovieAttributes
     {
         $this->video = $video;
     }
-
-    abstract protected function getBaseMediaAttributes(): array;
-
-    protected function getMediaAttributes(): array
-    {
-        return array_merge($this->getBaseMediaAttributes(), [
-            'title' => $this->getTitle(),
-            'original_title' => $this->getOriginalTitle(),
-            'release_date' => $this->getReleaseDate(),
-            'adult' => $this->isAdult(),
-            'video' => $this->isVideo(),
-        ]);
-    }
 }

@@ -6,7 +6,7 @@ class CertificationList extends Entity
 {
     private string $country;
     /** @var Certification[] */
-    private $certifications = [];
+    private array $certifications = [];
 
     public function getCountry(): string
     {
@@ -32,16 +32,5 @@ class CertificationList extends Entity
     public function setCertifications(array $certifications): void
     {
         $this->certifications = $certifications;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function toArray(): array
-    {
-        return [
-            'country' => $this->getCountry(),
-            'certifications' => $this->getCertifications(),
-        ];
     }
 }

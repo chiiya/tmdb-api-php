@@ -1,3 +1,5 @@
+Examples for using certifications API resources. [See documentation on TMDB](https://developers.themoviedb.org/3/certifications).
+
 ## Certifications
 
 #### Direct Usage
@@ -7,10 +9,10 @@ use Chiiya\Tmdb\Client;
 $client = new Client('token');
 // Get movie certifications
 $response = $client->certifications()->getMovieCertifications();
-var_dump($response['certifications']['US'][0]['certification']); // -> 'G'
+dump($response['certifications']['US'][0]['certification']); // -> 'G'
 // Get TV certifications
 $response = $client->certifications()->getTvCertifications();
-var_dump($response['certifications']['US'][0]['certification']); // -> 'NR'
+dump($response['certifications']['US'][0]['certification']); // -> 'NR'
 ```
 
 #### Repository Usage
@@ -21,9 +23,9 @@ use Chiiya\Tmdb\Repositories\CertificationRepository;
 $repository = new CertificationRepository(new Client('token'));
 // Get movie certifications
 $results = $repository->getMovieCertifications();
-var_dump($results->first()->getCountry()); // -> 'US'
-var_dump($results->first()->getCertifications()->first()->getCertification()); // -> 'G'
-//// Get TV certifications
+dump($results[0]->getCountry()); // -> 'US'
+dump($results[0]->getCertifications()[0]->getCertification()); // -> 'G'
+// Get TV certifications
 $results = $repository->getTvCertifications();
-var_dump($results->first()->getCountry()); // -> 'RU'
+dump($results[0]->getCountry()); // -> 'RU'
 ```

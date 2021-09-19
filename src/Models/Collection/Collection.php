@@ -16,13 +16,13 @@ class Collection extends Entity
     private ?string $posterPath;
     private ?string $backdropPath;
     /** @var Movie[] */
-    private $parts = [];
+    private array $parts = [];
     /** @var PosterImage[]|null */
-    private $posters;
+    private ?array $posters;
     /** @var BackdropImage[]|null */
-    private $backdrops;
+    private ?array $backdrops;
     /** @var Translation[]|null */
-    private $translations;
+    private ?array $translations;
 
     public function getId(): int
     {
@@ -184,23 +184,5 @@ class Collection extends Entity
     public function addTranslation(Translation $translation): void
     {
         $this->translations[] = $translation;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function toArray(): array
-    {
-        return [
-            'id' => $this->getId(),
-            'name' => $this->getName(),
-            'overview' => $this->getOverview(),
-            'poster_path' => $this->getPosterPath(),
-            'backdrop_path' => $this->getBackdropPath(),
-            'parts' => $this->getParts(),
-            'posters' => $this->getPosters(),
-            'backdrops' => $this->getBackdrops(),
-            'translations' => $this->getTranslations(),
-        ];
     }
 }

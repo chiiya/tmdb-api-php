@@ -2,13 +2,20 @@
 
 namespace Chiiya\Tmdb\Models;
 
-use Chiiya\Tmdb\Common\Arrayable;
 use Chiiya\Tmdb\Common\HasAttributes;
+use Chiiya\Tmdb\Common\SerializesEntities;
+use JsonSerializable;
+use Stringable;
+use Symfony\Component\Serializer\Annotation\Ignore;
+use Symfony\Component\Serializer\Serializer;
 
-abstract class Entity implements \JsonSerializable, Arrayable
+abstract class Entity implements JsonSerializable, Stringable
 {
-    use SerializesToJson;
     use HasAttributes;
+    use SerializesEntities;
+
+    #[Ignore]
+    protected Serializer $serializer;
 
     /**
      * Entity constructor.
@@ -18,10 +25,29 @@ abstract class Entity implements \JsonSerializable, Arrayable
         foreach ($attributes as $key => $value) {
             $this->setAttribute($key, $value);
         }
+        $this->serializer = $this->createSerializer();
+    }
+
+    public function __toString(): string
+    {
+        return $this->jsonSerialize();
+    }
+
+    public function toJson(): string
+    {
+        return json_encode($this->toArray());
+    }
+
+    public function jsonSerialize(): string
+    {
+        return $this->toJson();
     }
 
     /**
-     * Convert the model instance to an array.
+     * Convert the entity instance to an array.
      */
-    abstract public function toArray(): array;
+    public function toArray(): array
+    {
+        return $this->serializer->normalize($this);
+    }
 }

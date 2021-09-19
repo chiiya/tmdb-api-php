@@ -55,16 +55,4 @@ trait HasTvAttributes
     {
         $this->firstAirDate = $firstAirDate;
     }
-
-    abstract protected function getBaseMediaAttributes(): array;
-
-    protected function getMediaAttributes(): array
-    {
-        return array_merge($this->getBaseMediaAttributes(), [
-            'name' => $this->getName(),
-            'original_name' => $this->getOriginalName(),
-            'origin_country' => $this->getOriginCountry(),
-            'first_air_date' => $this->getFirstAirDate(),
-        ]);
-    }
 }

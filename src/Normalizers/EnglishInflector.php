@@ -7,7 +7,7 @@ use Symfony\Component\String\Inflector\InflectorInterface;
 
 class EnglishInflector implements InflectorInterface
 {
-    protected $singulars = [
+    protected array $singulars = [
         'cast' => 'castMember',
         'crew' => 'crewMember',
         'knownFor' => 'knownForEntry',

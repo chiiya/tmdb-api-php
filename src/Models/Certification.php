@@ -8,8 +8,6 @@ class Certification extends Entity
     private string $meaning;
     private int $order;
 
-    public static array $properties = ['certification', 'meaning', 'order'];
-
     public function getCertification(): string
     {
         return $this->certification;
@@ -38,17 +36,5 @@ class Certification extends Entity
     public function setOrder(int $order): void
     {
         $this->order = $order;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function toArray(): array
-    {
-        return [
-            'certification' => $this->getCertification(),
-            'meaning' => $this->getMeaning(),
-            'order' => $this->getOrder(),
-        ];
     }
 }

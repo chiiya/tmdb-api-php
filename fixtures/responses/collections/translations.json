@@ -30,7 +30,7 @@
 			"english_name": "Czech",
 			"data": {
 				"title": "Star Wars (kolekce)",
-				"overview": "",
+				"overview": "Star Wars (česky původně též Hvězdné války) je americká multimediální franšíza žánru space opera, vytvořená Georgem Lucasem. Její hlavní částí je devítidílná řada celovečerních filmů, ke které se postupně přidala další díla.",
 				"homepage": ""
 			}
 		},
@@ -206,7 +206,7 @@
 			"english_name": "Japanese",
 			"data": {
 				"title": "スター・ウォーズ シリーズ",
-				"overview": "",
+				"overview": "\"はるか昔、はるか彼方の銀河系を舞台に、さまざまな登場人物たちの冒険を描いた壮大なスペースオペラ劇場映画シリーズ....\"",
 				"homepage": ""
 			}
 		},
@@ -261,7 +261,7 @@
 			"english_name": "Dutch",
 			"data": {
 				"title": "Star Wars collectie",
-				"overview": "De collectie van de zes theatrale productie van films uit de regisseur, scenarioschrijver en producer George Lucas. Luke Skywalker, Princess Leia, Darth Vader, C3PO, R2D2 en vele andere personages uit de film zijn nu vertrouwde namen van een van de meest succesvolle filmprojecten aller tijden.",
+				"overview": "De collectie van de 9 theatrale productie van films uit de regisseur, scenarioschrijver en producer George Lucas. Luke Skywalker, Princess Leia, Darth Vader, C3PO, R2D2 en vele andere personages uit de film zijn nu vertrouwde namen van een van de meest succesvolle filmprojecten aller tijden.",
 				"homepage": ""
 			}
 		},
@@ -293,7 +293,7 @@
 			"name": "Português",
 			"english_name": "Portuguese",
 			"data": {
-				"title": "Coleção Star Wars",
+				"title": "Star Wars - Coletânea",
 				"overview": "Uma série épica de filmes ópera espacial, que retratam as aventuras de vários personagens \"há muito tempo em uma galáxia muito, muito distante ....\"",
 				"homepage": ""
 			}
@@ -381,8 +381,8 @@
 			"name": "Türkçe",
 			"english_name": "Turkish",
 			"data": {
-				"title": "Yıldız Savaşları Serisi",
-				"overview": "Yıldız Savaşları, George Lucas tarafından yapılmış, öncelikle filmleriyle tanınmış, sonraki yıllarda çizgi roman, bilgisayar ve konsol oyunları, televizyon yapımları vb. dallarda ününü geliştirmiş kurgusal evren ve markadır. Bugüne kadar 11 film bizlerle buluşsa da ana hikayeyi anlatan 8 film bulunmakta. İzleme sıralaması 4-5-6-1-2-3-7-8 şeklindedir.",
+				"title": "Yıldız Savaşları [Seri]",
+				"overview": "Yıldız Savaşları, George Lucas tarafından yapılmış, öncelikle filmleriyle tanınmış, sonraki yıllarda çizgi roman, bilgisayar ve konsol oyunları, televizyon yapımları vb. dallarda ününü geliştirmiş kurgusal evren ve markadır. Bugüne kadar 11 film bizlerle buluşsa da ana hikayeyi anlatan 8 film bulunmakta. İzleme sıralaması 4-5-6-1-2-3-7-8-9 şeklindedir.",
 				"homepage": ""
 			}
 		},
@@ -425,8 +425,8 @@
 			"name": "普通话",
 			"english_name": "Mandarin",
 			"data": {
-				"title": "星際大戰 系列",
-				"overview": "",
+				"title": "星際大戰（系列）",
+				"overview": "在很久以前，一個遙遠的銀河系，肩負正義使命的絕地武士與帝國邪惡黑暗勢力作戰的故事。",
 				"homepage": ""
 			}
 		}

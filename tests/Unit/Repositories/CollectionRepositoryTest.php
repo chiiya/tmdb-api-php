@@ -9,8 +9,7 @@ use GuzzleHttp\Psr7\Response;
 
 class CollectionRepositoryTest extends ApiTestCase
 {
-    /** @var CollectionRepository */
-    protected $repository;
+    protected CollectionRepository $repository;
 
     public function setUp(): void
     {
@@ -26,7 +25,7 @@ class CollectionRepositoryTest extends ApiTestCase
         $collection = $this->repository->getCollection(10);
         $this->assertEquals(10, $collection->getId());
         $this->assertEquals('Star Wars Collection', $collection->getName());
-        $this->assertEquals('/r8Ph5MYXL04Qzu4QBbq2KjqwtkQ.jpg', $collection->getPosterPath());
+        $this->assertEquals('/tdQzRSk4PXX6hzjLcQWHafYtZTI.jpg', $collection->getPosterPath());
         $this->assertEquals('The Empire Strikes Back', $collection->getParts()[1]->getTitle());
     }
 
@@ -40,12 +39,12 @@ class CollectionRepositoryTest extends ApiTestCase
         ]);
         $this->assertEquals(10, $collection->getId());
         $this->assertEquals('Star Wars Collection', $collection->getName());
-        $this->assertEquals('/r8Ph5MYXL04Qzu4QBbq2KjqwtkQ.jpg', $collection->getPosterPath());
+        $this->assertEquals('/tdQzRSk4PXX6hzjLcQWHafYtZTI.jpg', $collection->getPosterPath());
         $this->assertEquals('AE', $collection->getTranslations()[0]->getIso31661());
         $this->assertEquals('ar', $collection->getTranslations()[0]->getIso6391());
         $this->assertEquals('Star Wars (kolekce)', $collection->getTranslations()[2]->getData()->getTitle());
         $this->assertEquals('/d8duYyyC9J5T825Hg7grmaabfxQ.jpg', $collection->getBackdrops()[0]->getFilePath());
-        $this->assertEquals('/r8Ph5MYXL04Qzu4QBbq2KjqwtkQ.jpg', $collection->getPosters()[0]->getFilePath());
+        $this->assertEquals('/tdQzRSk4PXX6hzjLcQWHafYtZTI.jpg', $collection->getPosters()[0]->getFilePath());
     }
 
     public function test_collection_images(): void
@@ -55,7 +54,7 @@ class CollectionRepositoryTest extends ApiTestCase
             ->will(new Response(200, [], $this->getMockResponse('collections/images')));
         $images = $this->repository->getImages(10);
         $this->assertEquals('/d8duYyyC9J5T825Hg7grmaabfxQ.jpg', $images->getBackdrops()[0]->getFilePath());
-        $this->assertEquals('/r8Ph5MYXL04Qzu4QBbq2KjqwtkQ.jpg', $images->getPosters()[0]->getFilePath());
+        $this->assertEquals('/tdQzRSk4PXX6hzjLcQWHafYtZTI.jpg', $images->getPosters()[0]->getFilePath());
     }
 
     public function test_collection_translations(): void

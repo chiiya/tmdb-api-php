@@ -7,7 +7,7 @@ use Chiiya\Tmdb\Models\ChangedEntity;
 class ChangesResponse extends PaginatedResponse
 {
     /** @var ChangedEntity[] */
-    private $results = [];
+    private array $results = [];
 
     /**
      * @return ChangedEntity[]

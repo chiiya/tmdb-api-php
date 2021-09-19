@@ -15,14 +15,4 @@ trait HasIsoInformation
     {
         $this->iso6391 = $iso6391;
     }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function toArray(): array
-    {
-        return array_merge(parent::toArray(), [
-            'iso_639_1' => $this->getIso6391(),
-        ]);
-    }
 }

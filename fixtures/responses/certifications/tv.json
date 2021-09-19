@@ -1,0 +1,68 @@
+{
+	"certifications": {
+		"FR": [
+			{
+				"certification": "10",
+				"meaning": "Not recommended for children under 10. Not allowed in children's television series.",
+				"order": 1
+			},
+			{
+				"certification": "18",
+				"meaning": "Not recommended for persons under 18. Allowed between midnight and 5 a.m. and only in some channels, access to these programs is locked by a personal password.",
+				"order": 4
+			},
+			{
+				"certification": "16",
+				"meaning": "Not recommended for children under 16. Not allowed air before 10:30 p.m. Some channels and programs are subject to exception.",
+				"order": 3
+			},
+			{
+				"certification": "NR",
+				"meaning": "No rating information.",
+				"order": 0
+			},
+			{
+				"certification": "12",
+				"meaning": "Not recommended for children under 12. Not allowed air before 10:00 p.m. Some channels and programs are subject to exception.",
+				"order": 2
+			}
+		],
+		"US": [
+			{
+				"certification": "TV-MA",
+				"meaning": "This program is specifically designed to be viewed by adults and therefore may be unsuitable for children under 17.",
+				"order": 6
+			},
+			{
+				"certification": "TV-Y",
+				"meaning": "This program is designed to be appropriate for all children.",
+				"order": 1
+			},
+			{
+				"certification": "TV-14",
+				"meaning": "This program contains some material that many parents would find unsuitable for children under 14 years of age.",
+				"order": 5
+			},
+			{
+				"certification": "NR",
+				"meaning": "No rating information.",
+				"order": 0
+			},
+			{
+				"certification": "TV-PG",
+				"meaning": "This program contains material that parents may find unsuitable for younger children.",
+				"order": 4
+			},
+			{
+				"certification": "TV-Y7",
+				"meaning": "This program is designed for children age 7 and above.",
+				"order": 2
+			},
+			{
+				"certification": "TV-G",
+				"meaning": "Most parents would find this program suitable for all ages.",
+				"order": 3
+			}
+		]
+	}
+}

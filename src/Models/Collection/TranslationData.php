@@ -39,16 +39,4 @@ class TranslationData extends Entity
     {
         $this->homepage = $homepage;
     }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function toArray(): array
-    {
-        return [
-            'title' => $this->getTitle(),
-            'overview' => $this->getOverview(),
-            'homepage' => $this->getHomepage(),
-        ];
-    }
 }

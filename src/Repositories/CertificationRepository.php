@@ -5,15 +5,18 @@ namespace Chiiya\Tmdb\Repositories;
 use Chiiya\Tmdb\Factories\CertificationFactory;
 use Chiiya\Tmdb\Models\CertificationList;
 use Chiiya\Tmdb\Resources\Certifications;
+use GuzzleHttp\Exception\GuzzleException;
+use Symfony\Component\Serializer\Exception\ExceptionInterface;
 
 class CertificationRepository extends AbstractRepository
 {
     /**
-     * Get an up to date list of the officially supported movie certifications on TMDb.
+     * Get an up-to-date list of the officially supported movie certifications on TMDb.
      *
      * @see https://developers.themoviedb.org/3/certifications/get-movie-certifications
-     *
      * @return CertificationList[]
+     * @throws ExceptionInterface
+     * @throws GuzzleException
      */
     public function getMovieCertifications(array $parameters = []): array
     {
@@ -21,11 +24,12 @@ class CertificationRepository extends AbstractRepository
     }
 
     /**
-     * Get an up to date list of the officially supported TV show certifications on TMDb.
+     * Get an up-to-date list of the officially supported TV show certifications on TMDb.
      *
      * @see https://developers.themoviedb.org/3/certifications/get-tv-certifications
-     *
      * @return CertificationList[]
+     * @throws GuzzleException
+     * @throws ExceptionInterface
      */
     public function getTvCertifications(array $parameters = []): array
     {
@@ -37,7 +41,7 @@ class CertificationRepository extends AbstractRepository
      */
     protected function getFactory(): CertificationFactory
     {
-        return new CertificationFactory();
+        return new CertificationFactory($this->serializer);
     }
 
     /**

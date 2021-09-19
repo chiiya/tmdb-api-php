@@ -8,8 +8,7 @@ use GuzzleHttp\Psr7\Response;
 
 class ChangeRepositoryTest extends ApiTestCase
 {
-    /** @var ChangeRepository */
-    protected $repository;
+    protected ChangeRepository $repository;
 
     public function setUp(): void
     {
@@ -21,9 +20,9 @@ class ChangeRepositoryTest extends ApiTestCase
     {
         $this->guzzler->expects($this->once())
             ->endpoint($this->url('movie/changes'), 'GET')
-            ->will(new Response(200, [], $this->getMockResponse('changes/movies')));
+            ->will(new Response(200, [], $this->getMockResponse('changes/changes')));
         $response = $this->repository->getMovieChanges();
-        $this->assertEquals(21949, $response->getResults()[0]->getId());
+        $this->assertEquals(874049, $response->getResults()[0]->getId());
         $this->assertEquals(1, $response->getPage());
         $this->assertEquals(1, $response->getTotalPages());
         $this->assertEquals(1, $response->getTotalResults()); // Uhm, okay.
@@ -33,9 +32,9 @@ class ChangeRepositoryTest extends ApiTestCase
     {
         $this->guzzler->expects($this->once())
             ->endpoint($this->url('tv/changes'), 'GET')
-            ->will(new Response(200, [], $this->getMockResponse('changes/tv')));
+            ->will(new Response(200, [], $this->getMockResponse('changes/changes')));
         $response = $this->repository->getTvChanges();
-        $this->assertEquals(6249, $response->getResults()[0]->getId());
+        $this->assertEquals(874049, $response->getResults()[0]->getId());
         $this->assertEquals(1, $response->getPage());
     }
 
@@ -43,9 +42,9 @@ class ChangeRepositoryTest extends ApiTestCase
     {
         $this->guzzler->expects($this->once())
             ->endpoint($this->url('person/changes'), 'GET')
-            ->will(new Response(200, [], $this->getMockResponse('changes/person')));
+            ->will(new Response(200, [], $this->getMockResponse('changes/changes')));
         $response = $this->repository->getPersonChanges();
-        $this->assertEquals(1572271, $response->getResults()[0]->getId());
+        $this->assertEquals(874049, $response->getResults()[0]->getId());
         $this->assertEquals(1, $response->getPage());
     }
 }

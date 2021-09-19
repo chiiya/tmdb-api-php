@@ -118,15 +118,6 @@ class Attributes
         ];
     }
 
-    public static function certificationAttributes(): array
-    {
-        return [
-            'certification' => 'G',
-            'meaning' => 'All ages admitted.',
-            'order' => 1,
-        ];
-    }
-
     public static function personExternalIdsAttributes(): array
     {
         return [

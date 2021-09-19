@@ -1,6 +1,6 @@
 <?php
 
-namespace Chiiya\Tmdb\Tests\Unit\Models;
+namespace Chiiya\Tmdb\Tests\Unit\Models\Image;
 
 use Chiiya\Tmdb\Models\Image\LogoImage;
 use Chiiya\Tmdb\Tests\Fixtures\Attributes;

@@ -8,8 +8,7 @@ use GuzzleHttp\Psr7\Response;
 
 class CertificationRepositoryTest extends ApiTestCase
 {
-    /** @var CertificationRepository */
-    protected $repository;
+    protected CertificationRepository $repository;
 
     public function setUp(): void
     {
@@ -23,8 +22,8 @@ class CertificationRepositoryTest extends ApiTestCase
             ->endpoint($this->url('certification/movie/list'), 'GET')
             ->will(new Response(200, [], $this->getMockResponse('certifications/movies')));
         $response = $this->repository->getMovieCertifications();
-        $this->assertEquals('US', $response[0]->getCountry());
-        $this->assertEquals('G', $response[0]->getCertifications()[0]->getCertification());
+        $this->assertEquals('FR', $response[0]->getCountry());
+        $this->assertEquals('16', $response[0]->getCertifications()[0]->getCertification());
     }
 
     public function test_tv_certifications()
@@ -33,7 +32,7 @@ class CertificationRepositoryTest extends ApiTestCase
             ->endpoint($this->url('certification/tv/list'), 'GET')
             ->will(new Response(200, [], $this->getMockResponse('certifications/tv')));
         $response = $this->repository->getTvCertifications();
-        $this->assertEquals('RU', $response[0]->getCountry());
-        $this->assertEquals('18+', $response[0]->getCertifications()[0]->getCertification());
+        $this->assertEquals('FR', $response[0]->getCountry());
+        $this->assertEquals('10', $response[0]->getCertifications()[0]->getCertification());
     }
 }

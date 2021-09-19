@@ -8,10 +8,8 @@ trait HasAttributes
 {
     /**
      * Set specified attribute with the given value.
-     *
-     * @param mixed $value
      */
-    protected function setAttribute(string $key, $value): void
+    protected function setAttribute(string $key, mixed $value): void
     {
         if (!$this->hasSetterForAttribute($key)) {
             throw new InvalidArgumentException('Unknown attribute: '.$key);
@@ -29,10 +27,8 @@ trait HasAttributes
 
     /**
      * Call the setter for a specified attribute with the given value.
-     *
-     * @param mixed $value
      */
-    protected function callSetterForAttribute(string $key, $value): void
+    protected function callSetterForAttribute(string $key, mixed $value): void
     {
         $this->{'set'.StringHelper::studly($key)}($value);
     }

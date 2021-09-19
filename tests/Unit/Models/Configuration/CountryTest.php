@@ -1,6 +1,6 @@
 <?php
 
-namespace Chiiya\Tmdb\Tests\Unit\Models;
+namespace Chiiya\Tmdb\Tests\Unit\Models\Configuration;
 
 use Chiiya\Tmdb\Models\Configuration\Country;
 use Chiiya\Tmdb\Tests\Fixtures\Attributes;

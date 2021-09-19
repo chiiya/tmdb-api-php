@@ -6,7 +6,7 @@ class Change extends Entity
 {
     protected string $key;
     /** @var ChangeItem[] */
-    protected $items = [];
+    protected array $items = [];
 
     public function getKey(): string
     {
@@ -40,16 +40,5 @@ class Change extends Entity
     public function addItem(ChangeItem $item): void
     {
         $this->items[] = $item;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function toArray(): array
-    {
-        return [
-            'key' => $this->getKey(),
-            'items' => $this->getItems(),
-        ];
     }
 }

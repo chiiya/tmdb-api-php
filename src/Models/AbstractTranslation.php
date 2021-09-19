@@ -48,17 +48,4 @@ abstract class AbstractTranslation extends Entity
     {
         $this->englishName = $englishName;
     }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function toArray(): array
-    {
-        return [
-            'iso_3166_1' => $this->getIso31661(),
-            'iso_639_1' => $this->getIso6391(),
-            'name' => $this->getName(),
-            'english_name' => $this->getEnglishName(),
-        ];
-    }
 }
